@@ -93,8 +93,4 @@ bash scripts/run_modelnetc.sh
 | ModelNet40, ShapeNet Part | [Point-NN](https://github.com/ZrrSkywalker/Point-NN) |
 | ModelNet40-C, ShapeNet-C | [PointCloud-C](https://github.com/ldkong1205/PointCloud-C) |
 
-Place or symlink under `data/` as described above.
-
-## License
-
-MIT
+Place under `data/` as described above.
