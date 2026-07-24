@@ -1,0 +1,6 @@
+torch>=2.0
+pointnet2_ops
+h5py
+numpy
+tqdm
+pandas
