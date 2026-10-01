@@ -1,0 +1,9 @@
+==> Loading args..
+Namespace(dataset='scan', split=3, bz=32, points=[1024, 512, 256, 128], stages=4, k=[90, 90, 90, 90], metric=2, rescale=0.8, surface='geobp')
+==> Preparing model..
+==> Preparing data..
+==> Constructing Memory Bank from scan sets..
+==> Constructing Memory Bank from scan sets..
+Elapsed time: 15.851111888885498 seconds
+classification accuracy: 58.0500 with best gamma=3550.0.
+classification accuracy: 0.0000 with best gamma=3550.0.

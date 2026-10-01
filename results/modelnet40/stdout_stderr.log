@@ -1,0 +1,9 @@
+==> Loading args..
+Namespace(dataset='mn40', split=1, bz=32, points=[1024, 512, 256, 128], stages=4, k=[66, 66, 66, 66], metric=2, rescale=0.8, surface='knnxyz')
+==> Preparing model..
+==> Preparing data..
+==> Constructing Memory Bank from mn40 sets..
+==> Constructing Memory Bank from mn40 sets..
+Elapsed time: 5.268959999084473 seconds
+classification accuracy: 85.1297 with best gamma=6090.0.
+classification accuracy: 0.0000 with best gamma=6090.0.

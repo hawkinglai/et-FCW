@@ -1,0 +1,464 @@
+==> Loading args...
+Experimental Setup: ['global', 'local', 'united'] on Corruption: jitter
+
+========================================
+Starting Evaluation for Mode: GLOBAL
+========================================
+--> Building Memory Bank...
+
+Extracting features:   0%|          | 0/308 [00:00<?, ?it/s]
+Extracting features:   0%|          | 1/308 [00:00<02:24,  2.12it/s]
+Extracting features:   4%|▍         | 12/308 [00:00<00:11, 26.75it/s]
+Extracting features:   7%|▋         | 23/308 [00:00<00:06, 46.82it/s]
+Extracting features:  11%|█         | 34/308 [00:00<00:04, 62.27it/s]
+Extracting features:  15%|█▍        | 45/308 [00:00<00:03, 73.94it/s]
+Extracting features:  18%|█▊        | 56/308 [00:00<00:03, 82.53it/s]
+Extracting features:  22%|██▏       | 67/308 [00:01<00:02, 88.73it/s]
+Extracting features:  25%|██▌       | 78/308 [00:01<00:02, 93.28it/s]
+Extracting features:  29%|██▉       | 89/308 [00:01<00:02, 96.47it/s]
+Extracting features:  32%|███▏      | 100/308 [00:01<00:02, 98.77it/s]
+Extracting features:  36%|███▌      | 111/308 [00:01<00:01, 100.40it/s]
+Extracting features:  40%|███▉      | 122/308 [00:01<00:01, 101.50it/s]
+Extracting features:  43%|████▎     | 133/308 [00:01<00:01, 102.21it/s]
+Extracting features:  47%|████▋     | 144/308 [00:01<00:01, 102.70it/s]
+Extracting features:  50%|█████     | 155/308 [00:01<00:01, 103.10it/s]
+Extracting features:  54%|█████▍    | 166/308 [00:02<00:01, 102.93it/s]
+Extracting features:  57%|█████▋    | 177/308 [00:02<00:01, 103.24it/s]
+Extracting features:  61%|██████    | 188/308 [00:02<00:01, 103.44it/s]
+Extracting features:  65%|██████▍   | 199/308 [00:02<00:01, 103.70it/s]
+Extracting features:  68%|██████▊   | 210/308 [00:02<00:00, 103.85it/s]
+Extracting features:  72%|███████▏  | 221/308 [00:02<00:00, 103.88it/s]
+Extracting features:  75%|███████▌  | 232/308 [00:02<00:00, 104.08it/s]
+Extracting features:  79%|███████▉  | 243/308 [00:02<00:00, 104.21it/s]
+Extracting features:  82%|████████▏ | 254/308 [00:02<00:00, 104.21it/s]
+Extracting features:  86%|████████▌ | 265/308 [00:03<00:00, 104.35it/s]
+Extracting features:  90%|████████▉ | 276/308 [00:03<00:00, 104.35it/s]
+Extracting features:  93%|█████████▎| 287/308 [00:03<00:00, 104.40it/s]
+Extracting features:  97%|█████████▋| 298/308 [00:03<00:00, 104.56it/s]
+                                                                       
+--> Evaluating Clean Baseline...
+
+Extracting features:   0%|          | 0/78 [00:00<?, ?it/s]
+Extracting features:   6%|▋         | 5/78 [00:00<00:01, 46.74it/s]
+Extracting features:  21%|██        | 16/78 [00:00<00:00, 80.66it/s]
+Extracting features:  35%|███▍      | 27/78 [00:00<00:00, 91.33it/s]
+Extracting features:  49%|████▊     | 38/78 [00:00<00:00, 95.95it/s]
+Extracting features:  63%|██████▎   | 49/78 [00:00<00:00, 98.94it/s]
+Extracting features:  77%|███████▋  | 60/78 [00:00<00:00, 100.83it/s]
+Extracting features:  91%|█████████ | 71/78 [00:00<00:00, 102.08it/s]
+                                                                     
+    Mode global | Clean Gamma: 8230.0
+    Mode global | Clean Acc: 81.40%
+--> Evaluating jitter Levels 1-5...
+Loaded jitter (severity 0, partition test): 2468 samples
+
+Extracting features:   0%|          | 0/78 [00:00<?, ?it/s]
+Extracting features:   5%|▌         | 4/78 [00:00<00:01, 38.96it/s]
+Extracting features:  19%|█▉        | 15/78 [00:00<00:00, 79.03it/s]
+Extracting features:  33%|███▎      | 26/78 [00:00<00:00, 90.55it/s]
+Extracting features:  47%|████▋     | 37/78 [00:00<00:00, 95.75it/s]
+Extracting features:  62%|██████▏   | 48/78 [00:00<00:00, 98.11it/s]
+Extracting features:  76%|███████▌  | 59/78 [00:00<00:00, 99.86it/s]
+Extracting features:  90%|████████▉ | 70/78 [00:00<00:00, 101.27it/s]
+                                                                     
+    Mode global | Severity 1 | Gamma: 8650.0
+    Mode global | Severity 1 (File _0): 80.27%
+Loaded jitter (severity 1, partition test): 2468 samples
+
+Extracting features:   0%|          | 0/78 [00:00<?, ?it/s]
+Extracting features:   5%|▌         | 4/78 [00:00<00:01, 39.59it/s]
+Extracting features:  19%|█▉        | 15/78 [00:00<00:00, 79.81it/s]
+Extracting features:  33%|███▎      | 26/78 [00:00<00:00, 91.29it/s]
+Extracting features:  47%|████▋     | 37/78 [00:00<00:00, 96.55it/s]
+Extracting features:  62%|██████▏   | 48/78 [00:00<00:00, 99.43it/s]
+Extracting features:  76%|███████▌  | 59/78 [00:00<00:00, 100.61it/s]
+Extracting features:  90%|████████▉ | 70/78 [00:00<00:00, 101.86it/s]
+                                                                     
+    Mode global | Severity 2 | Gamma: 6480.0
+    Mode global | Severity 2 (File _1): 75.41%
+Loaded jitter (severity 2, partition test): 2468 samples
+
+Extracting features:   0%|          | 0/78 [00:00<?, ?it/s]
+Extracting features:   5%|▌         | 4/78 [00:00<00:01, 39.46it/s]
+Extracting features:  19%|█▉        | 15/78 [00:00<00:00, 80.13it/s]
+Extracting features:  33%|███▎      | 26/78 [00:00<00:00, 91.41it/s]
+Extracting features:  47%|████▋     | 37/78 [00:00<00:00, 96.63it/s]
+Extracting features:  62%|██████▏   | 48/78 [00:00<00:00, 99.50it/s]
+Extracting features:  76%|███████▌  | 59/78 [00:00<00:00, 101.31it/s]
+Extracting features:  90%|████████▉ | 70/78 [00:00<00:00, 102.33it/s]
+                                                                     
+    Mode global | Severity 3 | Gamma: 4930.0
+    Mode global | Severity 3 (File _2): 64.51%
+Loaded jitter (severity 3, partition test): 2468 samples
+
+Extracting features:   0%|          | 0/78 [00:00<?, ?it/s]
+Extracting features:   5%|▌         | 4/78 [00:00<00:01, 39.75it/s]
+Extracting features:  19%|█▉        | 15/78 [00:00<00:00, 78.82it/s]
+Extracting features:  33%|███▎      | 26/78 [00:00<00:00, 90.25it/s]
+Extracting features:  47%|████▋     | 37/78 [00:00<00:00, 95.69it/s]
+Extracting features:  62%|██████▏   | 48/78 [00:00<00:00, 98.71it/s]
+Extracting features:  76%|███████▌  | 59/78 [00:00<00:00, 100.49it/s]
+Extracting features:  90%|████████▉ | 70/78 [00:00<00:00, 101.72it/s]
+                                                                     
+    Mode global | Severity 4 | Gamma: 5550.0
+    Mode global | Severity 4 (File _3): 53.93%
+Loaded jitter (severity 4, partition test): 2468 samples
+
+Extracting features:   0%|          | 0/78 [00:00<?, ?it/s]
+Extracting features:   5%|▌         | 4/78 [00:00<00:01, 38.73it/s]
+Extracting features:  19%|█▉        | 15/78 [00:00<00:00, 79.20it/s]
+Extracting features:  33%|███▎      | 26/78 [00:00<00:00, 90.57it/s]
+Extracting features:  47%|████▋     | 37/78 [00:00<00:00, 95.86it/s]
+Extracting features:  62%|██████▏   | 48/78 [00:00<00:00, 98.79it/s]
+Extracting features:  76%|███████▌  | 59/78 [00:00<00:00, 100.45it/s]
+Extracting features:  90%|████████▉ | 70/78 [00:00<00:00, 101.74it/s]
+                                                                     
+    Mode global | Severity 5 | Gamma: 5720.0
+    Mode global | Severity 5 (File _4): 46.07%
+
+========================================
+Starting Evaluation for Mode: LOCAL
+========================================
+--> Building Memory Bank...
+
+Extracting features:   0%|          | 0/308 [00:00<?, ?it/s]
+Extracting features:   0%|          | 1/308 [00:00<00:42,  7.31it/s]
+Extracting features:   3%|▎         | 8/308 [00:00<00:07, 37.52it/s]
+Extracting features:   5%|▍         | 15/308 [00:00<00:05, 49.08it/s]
+Extracting features:   7%|▋         | 22/308 [00:00<00:05, 54.71it/s]
+Extracting features:   9%|▉         | 29/308 [00:00<00:04, 57.85it/s]
+Extracting features:  12%|█▏        | 36/308 [00:00<00:04, 59.77it/s]
+Extracting features:  14%|█▍        | 43/308 [00:00<00:04, 60.99it/s]
+Extracting features:  16%|█▌        | 50/308 [00:00<00:04, 61.82it/s]
+Extracting features:  19%|█▊        | 57/308 [00:01<00:04, 62.27it/s]
+Extracting features:  21%|██        | 64/308 [00:01<00:03, 62.57it/s]
+Extracting features:  23%|██▎       | 71/308 [00:01<00:03, 62.78it/s]
+Extracting features:  25%|██▌       | 78/308 [00:01<00:03, 62.90it/s]
+Extracting features:  28%|██▊       | 85/308 [00:01<00:03, 63.04it/s]
+Extracting features:  30%|██▉       | 92/308 [00:01<00:03, 63.12it/s]
+Extracting features:  32%|███▏      | 99/308 [00:01<00:03, 63.13it/s]
+Extracting features:  34%|███▍      | 106/308 [00:01<00:03, 63.14it/s]
+Extracting features:  37%|███▋      | 113/308 [00:01<00:03, 63.07it/s]
+Extracting features:  39%|███▉      | 120/308 [00:02<00:02, 62.99it/s]
+Extracting features:  41%|████      | 127/308 [00:02<00:02, 63.12it/s]
+Extracting features:  44%|████▎     | 134/308 [00:02<00:02, 63.16it/s]
+Extracting features:  46%|████▌     | 141/308 [00:02<00:02, 63.15it/s]
+Extracting features:  48%|████▊     | 148/308 [00:02<00:02, 63.17it/s]
+Extracting features:  50%|█████     | 155/308 [00:02<00:02, 63.20it/s]
+Extracting features:  53%|█████▎    | 162/308 [00:02<00:02, 63.24it/s]
+Extracting features:  55%|█████▍    | 169/308 [00:02<00:02, 63.23it/s]
+Extracting features:  57%|█████▋    | 176/308 [00:02<00:02, 63.25it/s]
+Extracting features:  59%|█████▉    | 183/308 [00:03<00:01, 63.26it/s]
+Extracting features:  62%|██████▏   | 190/308 [00:03<00:01, 63.24it/s]
+Extracting features:  64%|██████▍   | 197/308 [00:03<00:01, 63.23it/s]
+Extracting features:  66%|██████▌   | 204/308 [00:03<00:01, 63.26it/s]
+Extracting features:  69%|██████▊   | 211/308 [00:03<00:01, 63.21it/s]
+Extracting features:  71%|███████   | 218/308 [00:03<00:01, 63.21it/s]
+Extracting features:  73%|███████▎  | 225/308 [00:03<00:01, 63.20it/s]
+Extracting features:  75%|███████▌  | 232/308 [00:03<00:01, 63.20it/s]
+Extracting features:  78%|███████▊  | 239/308 [00:03<00:01, 63.23it/s]
+Extracting features:  80%|███████▉  | 246/308 [00:04<00:00, 63.04it/s]
+Extracting features:  82%|████████▏ | 253/308 [00:04<00:00, 63.03it/s]
+Extracting features:  84%|████████▍ | 260/308 [00:04<00:00, 63.13it/s]
+Extracting features:  87%|████████▋ | 267/308 [00:04<00:00, 63.23it/s]
+Extracting features:  89%|████████▉ | 274/308 [00:04<00:00, 63.32it/s]
+Extracting features:  91%|█████████ | 281/308 [00:04<00:00, 63.36it/s]
+Extracting features:  94%|█████████▎| 288/308 [00:04<00:00, 63.42it/s]
+Extracting features:  96%|█████████▌| 295/308 [00:04<00:00, 63.47it/s]
+Extracting features:  98%|█████████▊| 302/308 [00:04<00:00, 63.66it/s]
+                                                                      
+--> Evaluating Clean Baseline...
+
+Extracting features:   0%|          | 0/78 [00:00<?, ?it/s]
+Extracting features:   4%|▍         | 3/78 [00:00<00:02, 27.09it/s]
+Extracting features:  13%|█▎        | 10/78 [00:00<00:01, 47.92it/s]
+Extracting features:  22%|██▏       | 17/78 [00:00<00:01, 55.66it/s]
+Extracting features:  31%|███       | 24/78 [00:00<00:00, 58.79it/s]
+Extracting features:  40%|███▉      | 31/78 [00:00<00:00, 60.50it/s]
+Extracting features:  49%|████▊     | 38/78 [00:00<00:00, 61.54it/s]
+Extracting features:  58%|█████▊    | 45/78 [00:00<00:00, 61.94it/s]
+Extracting features:  67%|██████▋   | 52/78 [00:00<00:00, 62.26it/s]
+Extracting features:  76%|███████▌  | 59/78 [00:00<00:00, 62.63it/s]
+Extracting features:  85%|████████▍ | 66/78 [00:01<00:00, 62.90it/s]
+Extracting features:  94%|█████████▎| 73/78 [00:01<00:00, 63.19it/s]
+                                                                    
+    Mode local | Clean Gamma: 4910.0
+    Mode local | Clean Acc: 83.39%
+--> Evaluating jitter Levels 1-5...
+Loaded jitter (severity 0, partition test): 2468 samples
+
+Extracting features:   0%|          | 0/78 [00:00<?, ?it/s]
+Extracting features:   4%|▍         | 3/78 [00:00<00:02, 26.32it/s]
+Extracting features:  13%|█▎        | 10/78 [00:00<00:01, 48.03it/s]
+Extracting features:  22%|██▏       | 17/78 [00:00<00:01, 55.78it/s]
+Extracting features:  31%|███       | 24/78 [00:00<00:00, 58.52it/s]
+Extracting features:  40%|███▉      | 31/78 [00:00<00:00, 60.41it/s]
+Extracting features:  49%|████▊     | 38/78 [00:00<00:00, 61.57it/s]
+Extracting features:  58%|█████▊    | 45/78 [00:00<00:00, 62.33it/s]
+Extracting features:  67%|██████▋   | 52/78 [00:00<00:00, 62.83it/s]
+Extracting features:  76%|███████▌  | 59/78 [00:00<00:00, 63.15it/s]
+Extracting features:  85%|████████▍ | 66/78 [00:01<00:00, 63.47it/s]
+Extracting features:  94%|█████████▎| 73/78 [00:01<00:00, 63.72it/s]
+                                                                    
+    Mode local | Severity 1 | Gamma: 4310.0
+    Mode local | Severity 1 (File _0): 82.70%
+Loaded jitter (severity 1, partition test): 2468 samples
+
+Extracting features:   0%|          | 0/78 [00:00<?, ?it/s]
+Extracting features:   3%|▎         | 2/78 [00:00<00:03, 19.59it/s]
+Extracting features:  12%|█▏        | 9/78 [00:00<00:01, 46.56it/s]
+Extracting features:  21%|██        | 16/78 [00:00<00:01, 55.27it/s]
+Extracting features:  29%|██▉       | 23/78 [00:00<00:00, 58.67it/s]
+Extracting features:  38%|███▊      | 30/78 [00:00<00:00, 60.60it/s]
+Extracting features:  47%|████▋     | 37/78 [00:00<00:00, 61.75it/s]
+Extracting features:  56%|█████▋    | 44/78 [00:00<00:00, 62.50it/s]
+Extracting features:  65%|██████▌   | 51/78 [00:00<00:00, 62.97it/s]
+Extracting features:  74%|███████▍  | 58/78 [00:00<00:00, 63.27it/s]
+Extracting features:  83%|████████▎ | 65/78 [00:01<00:00, 63.52it/s]
+Extracting features:  92%|█████████▏| 72/78 [00:01<00:00, 63.77it/s]
+                                                                    
+    Mode local | Severity 2 | Gamma: 5900.0
+    Mode local | Severity 2 (File _1): 82.05%
+Loaded jitter (severity 2, partition test): 2468 samples
+
+Extracting features:   0%|          | 0/78 [00:00<?, ?it/s]
+Extracting features:   4%|▍         | 3/78 [00:00<00:02, 26.66it/s]
+Extracting features:  13%|█▎        | 10/78 [00:00<00:01, 48.02it/s]
+Extracting features:  22%|██▏       | 17/78 [00:00<00:01, 55.72it/s]
+Extracting features:  31%|███       | 24/78 [00:00<00:00, 58.84it/s]
+Extracting features:  40%|███▉      | 31/78 [00:00<00:00, 60.53it/s]
+Extracting features:  49%|████▊     | 38/78 [00:00<00:00, 61.59it/s]
+Extracting features:  58%|█████▊    | 45/78 [00:00<00:00, 62.25it/s]
+Extracting features:  67%|██████▋   | 52/78 [00:00<00:00, 62.70it/s]
+Extracting features:  76%|███████▌  | 59/78 [00:00<00:00, 63.10it/s]
+Extracting features:  85%|████████▍ | 66/78 [00:01<00:00, 63.36it/s]
+Extracting features:  94%|█████████▎| 73/78 [00:01<00:00, 63.65it/s]
+                                                                    
+    Mode local | Severity 3 | Gamma: 6110.0
+    Mode local | Severity 3 (File _2): 78.48%
+Loaded jitter (severity 3, partition test): 2468 samples
+
+Extracting features:   0%|          | 0/78 [00:00<?, ?it/s]
+Extracting features:   4%|▍         | 3/78 [00:00<00:02, 26.44it/s]
+Extracting features:  13%|█▎        | 10/78 [00:00<00:01, 47.81it/s]
+Extracting features:  22%|██▏       | 17/78 [00:00<00:01, 55.71it/s]
+Extracting features:  31%|███       | 24/78 [00:00<00:00, 58.99it/s]
+Extracting features:  40%|███▉      | 31/78 [00:00<00:00, 60.79it/s]
+Extracting features:  49%|████▊     | 38/78 [00:00<00:00, 61.88it/s]
+Extracting features:  58%|█████▊    | 45/78 [00:00<00:00, 62.46it/s]
+Extracting features:  67%|██████▋   | 52/78 [00:00<00:00, 62.91it/s]
+Extracting features:  76%|███████▌  | 59/78 [00:00<00:00, 63.25it/s]
+Extracting features:  85%|████████▍ | 66/78 [00:01<00:00, 63.53it/s]
+Extracting features:  94%|█████████▎| 73/78 [00:01<00:00, 63.73it/s]
+                                                                    
+    Mode local | Severity 4 | Gamma: 7510.0
+    Mode local | Severity 4 (File _3): 73.14%
+Loaded jitter (severity 4, partition test): 2468 samples
+
+Extracting features:   0%|          | 0/78 [00:00<?, ?it/s]
+Extracting features:   4%|▍         | 3/78 [00:00<00:02, 26.14it/s]
+Extracting features:  13%|█▎        | 10/78 [00:00<00:01, 47.72it/s]
+Extracting features:  22%|██▏       | 17/78 [00:00<00:01, 55.59it/s]
+Extracting features:  31%|███       | 24/78 [00:00<00:00, 58.80it/s]
+Extracting features:  40%|███▉      | 31/78 [00:00<00:00, 60.65it/s]
+Extracting features:  49%|████▊     | 38/78 [00:00<00:00, 61.72it/s]
+Extracting features:  58%|█████▊    | 45/78 [00:00<00:00, 62.41it/s]
+Extracting features:  67%|██████▋   | 52/78 [00:00<00:00, 62.84it/s]
+Extracting features:  76%|███████▌  | 59/78 [00:00<00:00, 63.19it/s]
+Extracting features:  85%|████████▍ | 66/78 [00:01<00:00, 62.65it/s]
+Extracting features:  94%|█████████▎| 73/78 [00:01<00:00, 63.10it/s]
+                                                                    
+    Mode local | Severity 5 | Gamma: 4240.0
+    Mode local | Severity 5 (File _4): 66.65%
+
+========================================
+Starting Evaluation for Mode: UNITED
+========================================
+--> Building Memory Bank...
+
+Extracting features:   0%|          | 0/308 [00:00<?, ?it/s]
+Extracting features:   0%|          | 1/308 [00:00<00:42,  7.23it/s]
+Extracting features:   2%|▏         | 7/308 [00:00<00:08, 33.89it/s]
+Extracting features:   4%|▍         | 13/308 [00:00<00:06, 44.01it/s]
+Extracting features:   6%|▌         | 19/308 [00:00<00:05, 49.72it/s]
+Extracting features:   8%|▊         | 25/308 [00:00<00:05, 52.62it/s]
+Extracting features:  10%|█         | 31/308 [00:00<00:05, 54.55it/s]
+Extracting features:  12%|█▏        | 37/308 [00:00<00:04, 55.80it/s]
+Extracting features:  14%|█▍        | 43/308 [00:00<00:04, 56.58it/s]
+Extracting features:  16%|█▌        | 49/308 [00:00<00:04, 57.05it/s]
+Extracting features:  18%|█▊        | 55/308 [00:01<00:04, 57.32it/s]
+Extracting features:  20%|█▉        | 61/308 [00:01<00:04, 57.53it/s]
+Extracting features:  22%|██▏       | 67/308 [00:01<00:04, 57.69it/s]
+Extracting features:  24%|██▎       | 73/308 [00:01<00:04, 57.81it/s]
+Extracting features:  26%|██▌       | 79/308 [00:01<00:03, 57.87it/s]
+Extracting features:  28%|██▊       | 85/308 [00:01<00:03, 57.66it/s]
+Extracting features:  30%|██▉       | 91/308 [00:01<00:03, 57.79it/s]
+Extracting features:  31%|███▏      | 97/308 [00:01<00:03, 57.97it/s]
+Extracting features:  33%|███▎      | 103/308 [00:01<00:03, 58.10it/s]
+Extracting features:  35%|███▌      | 109/308 [00:01<00:03, 58.18it/s]
+Extracting features:  37%|███▋      | 115/308 [00:02<00:03, 58.26it/s]
+Extracting features:  39%|███▉      | 121/308 [00:02<00:03, 58.32it/s]
+Extracting features:  41%|████      | 127/308 [00:02<00:03, 58.33it/s]
+Extracting features:  43%|████▎     | 133/308 [00:02<00:02, 58.36it/s]
+Extracting features:  45%|████▌     | 139/308 [00:02<00:02, 58.42it/s]
+Extracting features:  47%|████▋     | 145/308 [00:02<00:02, 58.43it/s]
+Extracting features:  49%|████▉     | 151/308 [00:02<00:02, 58.39it/s]
+Extracting features:  51%|█████     | 157/308 [00:02<00:02, 58.41it/s]
+Extracting features:  53%|█████▎    | 163/308 [00:02<00:02, 58.47it/s]
+Extracting features:  55%|█████▍    | 169/308 [00:03<00:02, 58.45it/s]
+Extracting features:  57%|█████▋    | 175/308 [00:03<00:02, 58.32it/s]
+Extracting features:  59%|█████▉    | 181/308 [00:03<00:02, 58.37it/s]
+Extracting features:  61%|██████    | 187/308 [00:03<00:02, 58.39it/s]
+Extracting features:  63%|██████▎   | 193/308 [00:03<00:01, 58.41it/s]
+Extracting features:  65%|██████▍   | 199/308 [00:03<00:01, 58.44it/s]
+Extracting features:  67%|██████▋   | 205/308 [00:03<00:01, 58.28it/s]
+Extracting features:  69%|██████▊   | 211/308 [00:03<00:01, 58.25it/s]
+Extracting features:  70%|███████   | 217/308 [00:03<00:01, 58.30it/s]
+Extracting features:  72%|███████▏  | 223/308 [00:03<00:01, 58.12it/s]
+Extracting features:  74%|███████▍  | 229/308 [00:04<00:01, 58.21it/s]
+Extracting features:  76%|███████▋  | 235/308 [00:04<00:01, 58.26it/s]
+Extracting features:  78%|███████▊  | 241/308 [00:04<00:01, 58.28it/s]
+Extracting features:  80%|████████  | 247/308 [00:04<00:01, 58.27it/s]
+Extracting features:  82%|████████▏ | 253/308 [00:04<00:00, 58.30it/s]
+Extracting features:  84%|████████▍ | 259/308 [00:04<00:00, 58.30it/s]
+Extracting features:  86%|████████▌ | 265/308 [00:04<00:00, 58.33it/s]
+Extracting features:  88%|████████▊ | 271/308 [00:04<00:00, 58.34it/s]
+Extracting features:  90%|████████▉ | 277/308 [00:04<00:00, 58.35it/s]
+Extracting features:  92%|█████████▏| 283/308 [00:04<00:00, 58.40it/s]
+Extracting features:  94%|█████████▍| 289/308 [00:05<00:00, 58.40it/s]
+Extracting features:  96%|█████████▌| 295/308 [00:05<00:00, 58.46it/s]
+Extracting features:  98%|█████████▊| 301/308 [00:05<00:00, 58.56it/s]
+Extracting features: 100%|█████████▉| 307/308 [00:05<00:00, 58.68it/s]
+                                                                      
+--> Evaluating Clean Baseline...
+
+Extracting features:   0%|          | 0/78 [00:00<?, ?it/s]
+Extracting features:   3%|▎         | 2/78 [00:00<00:03, 19.77it/s]
+Extracting features:  10%|█         | 8/78 [00:00<00:01, 42.34it/s]
+Extracting features:  19%|█▉        | 15/78 [00:00<00:01, 51.19it/s]
+Extracting features:  27%|██▋       | 21/78 [00:00<00:01, 53.98it/s]
+Extracting features:  35%|███▍      | 27/78 [00:00<00:00, 55.60it/s]
+Extracting features:  42%|████▏     | 33/78 [00:00<00:00, 56.63it/s]
+Extracting features:  50%|█████     | 39/78 [00:00<00:00, 57.30it/s]
+Extracting features:  58%|█████▊    | 45/78 [00:00<00:00, 57.74it/s]
+Extracting features:  65%|██████▌   | 51/78 [00:00<00:00, 58.03it/s]
+Extracting features:  73%|███████▎  | 57/78 [00:01<00:00, 58.24it/s]
+Extracting features:  81%|████████  | 63/78 [00:01<00:00, 58.41it/s]
+Extracting features:  88%|████████▊ | 69/78 [00:01<00:00, 58.59it/s]
+Extracting features:  96%|█████████▌| 75/78 [00:01<00:00, 58.70it/s]
+                                                                    
+    Mode united | Clean Gamma: 6080.0
+    Mode united | Clean Acc: 84.72%
+--> Evaluating jitter Levels 1-5...
+Loaded jitter (severity 0, partition test): 2468 samples
+
+Extracting features:   0%|          | 0/78 [00:00<?, ?it/s]
+Extracting features:   4%|▍         | 3/78 [00:00<00:02, 25.53it/s]
+Extracting features:  12%|█▏        | 9/78 [00:00<00:01, 43.45it/s]
+Extracting features:  21%|██        | 16/78 [00:00<00:01, 51.27it/s]
+Extracting features:  28%|██▊       | 22/78 [00:00<00:01, 54.12it/s]
+Extracting features:  36%|███▌      | 28/78 [00:00<00:00, 55.59it/s]
+Extracting features:  44%|████▎     | 34/78 [00:00<00:00, 56.54it/s]
+Extracting features:  51%|█████▏    | 40/78 [00:00<00:00, 57.10it/s]
+Extracting features:  59%|█████▉    | 46/78 [00:00<00:00, 57.52it/s]
+Extracting features:  67%|██████▋   | 52/78 [00:00<00:00, 57.79it/s]
+Extracting features:  74%|███████▍  | 58/78 [00:01<00:00, 57.97it/s]
+Extracting features:  82%|████████▏ | 64/78 [00:01<00:00, 58.13it/s]
+Extracting features:  90%|████████▉ | 70/78 [00:01<00:00, 58.30it/s]
+Extracting features:  97%|█████████▋| 76/78 [00:01<00:00, 58.43it/s]
+                                                                    
+    Mode united | Severity 1 | Gamma: 6710.0
+    Mode united | Severity 1 (File _0): 84.40%
+Loaded jitter (severity 1, partition test): 2468 samples
+
+Extracting features:   0%|          | 0/78 [00:00<?, ?it/s]
+Extracting features:   3%|▎         | 2/78 [00:00<00:03, 19.52it/s]
+Extracting features:  10%|█         | 8/78 [00:00<00:01, 42.12it/s]
+Extracting features:  19%|█▉        | 15/78 [00:00<00:01, 50.97it/s]
+Extracting features:  27%|██▋       | 21/78 [00:00<00:01, 53.77it/s]
+Extracting features:  35%|███▍      | 27/78 [00:00<00:00, 55.31it/s]
+Extracting features:  42%|████▏     | 33/78 [00:00<00:00, 56.29it/s]
+Extracting features:  50%|█████     | 39/78 [00:00<00:00, 56.99it/s]
+Extracting features:  58%|█████▊    | 45/78 [00:00<00:00, 57.35it/s]
+Extracting features:  65%|██████▌   | 51/78 [00:00<00:00, 57.70it/s]
+Extracting features:  73%|███████▎  | 57/78 [00:01<00:00, 57.88it/s]
+Extracting features:  81%|████████  | 63/78 [00:01<00:00, 57.80it/s]
+Extracting features:  88%|████████▊ | 69/78 [00:01<00:00, 58.03it/s]
+Extracting features:  96%|█████████▌| 75/78 [00:01<00:00, 58.23it/s]
+                                                                    
+    Mode united | Severity 2 | Gamma: 4650.0
+    Mode united | Severity 2 (File _1): 82.54%
+Loaded jitter (severity 2, partition test): 2468 samples
+
+Extracting features:   0%|          | 0/78 [00:00<?, ?it/s]
+Extracting features:   3%|▎         | 2/78 [00:00<00:03, 19.59it/s]
+Extracting features:  10%|█         | 8/78 [00:00<00:01, 42.41it/s]
+Extracting features:  19%|█▉        | 15/78 [00:00<00:01, 51.30it/s]
+Extracting features:  27%|██▋       | 21/78 [00:00<00:01, 54.14it/s]
+Extracting features:  35%|███▍      | 27/78 [00:00<00:00, 55.78it/s]
+Extracting features:  42%|████▏     | 33/78 [00:00<00:00, 56.58it/s]
+Extracting features:  50%|█████     | 39/78 [00:00<00:00, 57.15it/s]
+Extracting features:  58%|█████▊    | 45/78 [00:00<00:00, 57.62it/s]
+Extracting features:  65%|██████▌   | 51/78 [00:00<00:00, 57.99it/s]
+Extracting features:  73%|███████▎  | 57/78 [00:01<00:00, 58.24it/s]
+Extracting features:  81%|████████  | 63/78 [00:01<00:00, 58.41it/s]
+Extracting features:  88%|████████▊ | 69/78 [00:01<00:00, 58.58it/s]
+Extracting features:  96%|█████████▌| 75/78 [00:01<00:00, 58.69it/s]
+                                                                    
+    Mode united | Severity 3 | Gamma: 5870.0
+    Mode united | Severity 3 (File _2): 78.28%
+Loaded jitter (severity 3, partition test): 2468 samples
+
+Extracting features:   0%|          | 0/78 [00:00<?, ?it/s]
+Extracting features:   3%|▎         | 2/78 [00:00<00:03, 19.50it/s]
+Extracting features:  10%|█         | 8/78 [00:00<00:01, 41.63it/s]
+Extracting features:  19%|█▉        | 15/78 [00:00<00:01, 50.71it/s]
+Extracting features:  27%|██▋       | 21/78 [00:00<00:01, 53.69it/s]
+Extracting features:  35%|███▍      | 27/78 [00:00<00:00, 55.44it/s]
+Extracting features:  42%|████▏     | 33/78 [00:00<00:00, 56.54it/s]
+Extracting features:  50%|█████     | 39/78 [00:00<00:00, 57.29it/s]
+Extracting features:  58%|█████▊    | 45/78 [00:00<00:00, 57.75it/s]
+Extracting features:  65%|██████▌   | 51/78 [00:00<00:00, 58.08it/s]
+Extracting features:  73%|███████▎  | 57/78 [00:01<00:00, 58.31it/s]
+Extracting features:  81%|████████  | 63/78 [00:01<00:00, 58.48it/s]
+Extracting features:  88%|████████▊ | 69/78 [00:01<00:00, 58.66it/s]
+Extracting features:  96%|█████████▌| 75/78 [00:01<00:00, 58.74it/s]
+                                                                    
+    Mode united | Severity 4 | Gamma: 4900.0
+    Mode united | Severity 4 (File _3): 69.69%
+Loaded jitter (severity 4, partition test): 2468 samples
+
+Extracting features:   0%|          | 0/78 [00:00<?, ?it/s]
+Extracting features:   3%|▎         | 2/78 [00:00<00:03, 19.73it/s]
+Extracting features:  10%|█         | 8/78 [00:00<00:01, 41.98it/s]
+Extracting features:  19%|█▉        | 15/78 [00:00<00:01, 50.88it/s]
+Extracting features:  27%|██▋       | 21/78 [00:00<00:01, 53.74it/s]
+Extracting features:  35%|███▍      | 27/78 [00:00<00:00, 55.41it/s]
+Extracting features:  42%|████▏     | 33/78 [00:00<00:00, 56.49it/s]
+Extracting features:  50%|█████     | 39/78 [00:00<00:00, 57.26it/s]
+Extracting features:  58%|█████▊    | 45/78 [00:00<00:00, 57.58it/s]
+Extracting features:  65%|██████▌   | 51/78 [00:00<00:00, 57.93it/s]
+Extracting features:  73%|███████▎  | 57/78 [00:01<00:00, 58.17it/s]
+Extracting features:  81%|████████  | 63/78 [00:01<00:00, 58.34it/s]
+Extracting features:  88%|████████▊ | 69/78 [00:01<00:00, 58.57it/s]
+Extracting features:  96%|█████████▌| 75/78 [00:01<00:00, 58.70it/s]
+                                                                    
+    Mode united | Severity 5 | Gamma: 3900.0
+    Mode united | Severity 5 (File _4): 60.90%
+
+
+
+============================================================
+STRESS TEST RESULTS: JITTER
+============================================================
+        Sev_0  Sev_1  Sev_2  Sev_3  Sev_4  Sev_5  Total_Drop
+global  81.40  80.27  75.41  64.51  53.93  46.07       35.33
+local   83.39  82.70  82.05  78.48  73.14  66.65       16.73
+united  84.72  84.40  82.54  78.28  69.69  60.90       23.82
+------------------------------------------------------------
+
+HYPOTHESIS CHECK:
+Global Drop: 35.33%
+Local Drop:  16.73%
+>> CONFIRMED: Global features are more sensitive to background noise.
+============================================================

@@ -1,0 +1,33 @@
+{
+  "paper_reported_miou_percent": 70.5,
+  "reproduced_miou_percent": 70.18,
+  "signed_gap_points": -0.32,
+  "absolute_gap_points": 0.32,
+  "gamma": 230,
+  "encoder_k": [
+    105,
+    105,
+    110,
+    120
+  ],
+  "decoder_k": 3,
+  "points": [
+    1024,
+    512,
+    256,
+    128
+  ],
+  "surface": "knnxyz",
+  "batch_size": 128,
+  "split": "trainval -> test",
+  "torch_seed": 3407,
+  "numpy_seed": "not explicitly set by original code",
+  "sampling": "NumPy random choice with replacement to 1024 points",
+  "original_reported_elapsed_seconds": 47.555912494659424,
+  "wall_seconds": 51.447,
+  "compatibility_only_changes": [],
+  "semantic_changes": false,
+  "status": "VERIFIED_REPRODUCTION",
+  "historical_entry_point": "reconstruction/scripts/shapenet.sh",
+  "log": "stdout_stderr.log"
+}

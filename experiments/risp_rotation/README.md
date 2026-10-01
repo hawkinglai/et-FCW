@@ -1,0 +1,3 @@
+# Table V RISP rotation
+
+Historical runner: `reconstruction/run_cls_ri.py` in the external companion source. The saved execution passed `--dataset mn40 --split 1 --bz 32 --points '[1024,512,256,128]' --stages 4 --k '[95,80,100,95]' --metric 2 --rescale 0.8 --surface knnxyz` with GPU 0 and PyTorch3D transforms available. The runner executes none/none, z/z, z/SO(3), and SO(3)/SO(3) internally, rotating xyz and normals. The historical shell's unsupported `--rot1/--rot2` arguments were omitted; no algorithmic change was made. See the [four recorded results](../../results/risp_rotation/summary.json).

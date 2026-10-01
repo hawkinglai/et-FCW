@@ -1,0 +1,83 @@
+{
+  "status": "CLOSE_REPRODUCTION",
+  "historical_entry_point": "reconstruction/run_cls_ri.py",
+  "compatibility_only_changes": [
+    "Omit unsupported --rot1 and --rot2 because original runner performs all four rotation cases internally.",
+    "Expose cached PyTorch3D 0.7.8 transforms package on PYTHONPATH; no source change."
+  ],
+  "results": [
+    {
+      "condition": "z/z",
+      "paper_accuracy": 73.9,
+      "measured_accuracy": 73.987,
+      "signed_gap": 0.087,
+      "absolute_gap": 0.087,
+      "selected_gamma": 8628.0,
+      "training_bank_sample_count": 9824,
+      "test_sample_count": 2468,
+      "risp_nsample": [
+        95,
+        80,
+        100,
+        95
+      ],
+      "torch_seed": 3407,
+      "semantic_modification_status": "NONE"
+    },
+    {
+      "condition": "z/SO(3)",
+      "paper_accuracy": 73.9,
+      "measured_accuracy": 74.0276,
+      "signed_gap": 0.1276,
+      "absolute_gap": 0.1276,
+      "selected_gamma": 7192.0,
+      "training_bank_sample_count": 9824,
+      "test_sample_count": 2468,
+      "risp_nsample": [
+        95,
+        80,
+        100,
+        95
+      ],
+      "torch_seed": 3407,
+      "semantic_modification_status": "NONE"
+    },
+    {
+      "condition": "SO(3)/SO(3)",
+      "paper_accuracy": 73.9,
+      "measured_accuracy": 73.9465,
+      "signed_gap": 0.0465,
+      "absolute_gap": 0.0465,
+      "selected_gamma": 7186.0,
+      "training_bank_sample_count": 9824,
+      "test_sample_count": 2468,
+      "risp_nsample": [
+        95,
+        80,
+        100,
+        95
+      ],
+      "torch_seed": 3407,
+      "semantic_modification_status": "NONE"
+    },
+    {
+      "condition": "none/none",
+      "paper_accuracy": 73.9,
+      "measured_accuracy": 74.0681,
+      "signed_gap": 0.1681,
+      "absolute_gap": 0.1681,
+      "selected_gamma": 7456.0,
+      "training_bank_sample_count": 9824,
+      "test_sample_count": 2468,
+      "risp_nsample": [
+        95,
+        80,
+        100,
+        95
+      ],
+      "torch_seed": 3407,
+      "semantic_modification_status": "NONE"
+    }
+  ],
+  "log": "stdout_stderr.log"
+}

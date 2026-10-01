@@ -1,0 +1,3 @@
+# Corrected GeoPCSD: ShapeNet-Part
+
+This is the canonical **local corrected reconstruction**. Set `TFCW_SHAPENET_PART_ROOT` to the existing `shapenetcore_partanno_segmentation_benchmark_v0_normal` dataset directory, then use [run.sh](run.sh) from this directory in the recorded CUDA environment. The path-only loader substitution does not alter point sampling. The launcher preserves trainval → test, surface `geobp`, 1024 input points, encoder K `[105,105,110,120]`, decoder K3, γ230 and Torch seed 3407. The original NumPy sampling behavior remains. See the [curated result](../../results/geopcsd_shapenet_part/summary.json) and [correction record](../../docs/geopcsd_correction.md).
