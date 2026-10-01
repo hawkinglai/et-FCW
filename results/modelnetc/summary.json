@@ -1,0 +1,500 @@
+{
+  "status": "VERIFIED_REPRODUCTION",
+  "historical_entry_point": "reconstruction/run_cls_modelnetcv2.py",
+  "gamma_search": "0, 10, ..., 9990; selected separately on clean and each corrupted test set's labels",
+  "mode_mapping": {
+    "global": "Algorithm 1",
+    "local": "Algorithm 2",
+    "united": "Algorithms 1 & 2"
+  },
+  "corruption_mapping": {
+    "jitter": "Jitter",
+    "add_global": "Global, PAPER_MAPPING_UNCERTAIN"
+  },
+  "runs": [
+    {
+      "mode": "global",
+      "paper_algorithm": "Algorithm 1",
+      "corruption": "jitter",
+      "mapping_status": "DIRECT_NAME_MATCH",
+      "severity_files": [
+        "jitter_0.h5",
+        "jitter_1.h5",
+        "jitter_2.h5",
+        "jitter_3.h5",
+        "jitter_4.h5"
+      ],
+      "k": [
+        110,
+        110,
+        110,
+        110
+      ],
+      "points": [
+        1024,
+        512,
+        256,
+        128
+      ],
+      "batch_size": 32,
+      "metric": 2,
+      "rescale": 0.8,
+      "sampling_behavior": "If cloud point count differs from 1024, np.random.choice(full_cloud_length, 1024, replace=True); appended points eligible",
+      "clean_test_accuracy_percent": 81.4,
+      "clean_test_selected_gamma": 8230.0,
+      "exit_code": 0,
+      "mean_absolute_gap_points": 0.0,
+      "severities": [
+        {
+          "severity": 1,
+          "file": "jitter_0.h5",
+          "paper_accuracy_percent": 80.27,
+          "measured_accuracy_percent": 80.27,
+          "signed_gap_points": 0.0,
+          "absolute_gap_points": 0.0,
+          "selected_gamma": 8650.0
+        },
+        {
+          "severity": 2,
+          "file": "jitter_1.h5",
+          "paper_accuracy_percent": 75.41,
+          "measured_accuracy_percent": 75.41,
+          "signed_gap_points": 0.0,
+          "absolute_gap_points": 0.0,
+          "selected_gamma": 6480.0
+        },
+        {
+          "severity": 3,
+          "file": "jitter_2.h5",
+          "paper_accuracy_percent": 64.51,
+          "measured_accuracy_percent": 64.51,
+          "signed_gap_points": 0.0,
+          "absolute_gap_points": 0.0,
+          "selected_gamma": 4930.0
+        },
+        {
+          "severity": 4,
+          "file": "jitter_3.h5",
+          "paper_accuracy_percent": 53.93,
+          "measured_accuracy_percent": 53.93,
+          "signed_gap_points": 0.0,
+          "absolute_gap_points": 0.0,
+          "selected_gamma": 5550.0
+        },
+        {
+          "severity": 5,
+          "file": "jitter_4.h5",
+          "paper_accuracy_percent": 46.07,
+          "measured_accuracy_percent": 46.07,
+          "signed_gap_points": 0.0,
+          "absolute_gap_points": 0.0,
+          "selected_gamma": 5720.0
+        }
+      ]
+    },
+    {
+      "mode": "local",
+      "paper_algorithm": "Algorithm 2",
+      "corruption": "jitter",
+      "mapping_status": "DIRECT_NAME_MATCH",
+      "severity_files": [
+        "jitter_0.h5",
+        "jitter_1.h5",
+        "jitter_2.h5",
+        "jitter_3.h5",
+        "jitter_4.h5"
+      ],
+      "k": [
+        110,
+        110,
+        110,
+        110
+      ],
+      "points": [
+        1024,
+        512,
+        256,
+        128
+      ],
+      "batch_size": 32,
+      "metric": 2,
+      "rescale": 0.8,
+      "sampling_behavior": "If cloud point count differs from 1024, np.random.choice(full_cloud_length, 1024, replace=True); appended points eligible",
+      "clean_test_accuracy_percent": 83.39,
+      "clean_test_selected_gamma": 4910.0,
+      "exit_code": 0,
+      "mean_absolute_gap_points": 0.0,
+      "severities": [
+        {
+          "severity": 1,
+          "file": "jitter_0.h5",
+          "paper_accuracy_percent": 82.7,
+          "measured_accuracy_percent": 82.7,
+          "signed_gap_points": 0.0,
+          "absolute_gap_points": 0.0,
+          "selected_gamma": 4310.0
+        },
+        {
+          "severity": 2,
+          "file": "jitter_1.h5",
+          "paper_accuracy_percent": 82.05,
+          "measured_accuracy_percent": 82.05,
+          "signed_gap_points": 0.0,
+          "absolute_gap_points": 0.0,
+          "selected_gamma": 5900.0
+        },
+        {
+          "severity": 3,
+          "file": "jitter_2.h5",
+          "paper_accuracy_percent": 78.48,
+          "measured_accuracy_percent": 78.48,
+          "signed_gap_points": 0.0,
+          "absolute_gap_points": 0.0,
+          "selected_gamma": 6110.0
+        },
+        {
+          "severity": 4,
+          "file": "jitter_3.h5",
+          "paper_accuracy_percent": 73.14,
+          "measured_accuracy_percent": 73.14,
+          "signed_gap_points": 0.0,
+          "absolute_gap_points": 0.0,
+          "selected_gamma": 7510.0
+        },
+        {
+          "severity": 5,
+          "file": "jitter_4.h5",
+          "paper_accuracy_percent": 66.65,
+          "measured_accuracy_percent": 66.65,
+          "signed_gap_points": 0.0,
+          "absolute_gap_points": 0.0,
+          "selected_gamma": 4240.0
+        }
+      ]
+    },
+    {
+      "mode": "united",
+      "paper_algorithm": "Algorithms 1 & 2",
+      "corruption": "jitter",
+      "mapping_status": "DIRECT_NAME_MATCH",
+      "severity_files": [
+        "jitter_0.h5",
+        "jitter_1.h5",
+        "jitter_2.h5",
+        "jitter_3.h5",
+        "jitter_4.h5"
+      ],
+      "k": [
+        110,
+        110,
+        110,
+        110
+      ],
+      "points": [
+        1024,
+        512,
+        256,
+        128
+      ],
+      "batch_size": 32,
+      "metric": 2,
+      "rescale": 0.8,
+      "sampling_behavior": "If cloud point count differs from 1024, np.random.choice(full_cloud_length, 1024, replace=True); appended points eligible",
+      "clean_test_accuracy_percent": 84.72,
+      "clean_test_selected_gamma": 6080.0,
+      "exit_code": 0,
+      "mean_absolute_gap_points": 0.0,
+      "severities": [
+        {
+          "severity": 1,
+          "file": "jitter_0.h5",
+          "paper_accuracy_percent": 84.4,
+          "measured_accuracy_percent": 84.4,
+          "signed_gap_points": 0.0,
+          "absolute_gap_points": 0.0,
+          "selected_gamma": 6710.0
+        },
+        {
+          "severity": 2,
+          "file": "jitter_1.h5",
+          "paper_accuracy_percent": 82.54,
+          "measured_accuracy_percent": 82.54,
+          "signed_gap_points": 0.0,
+          "absolute_gap_points": 0.0,
+          "selected_gamma": 4650.0
+        },
+        {
+          "severity": 3,
+          "file": "jitter_2.h5",
+          "paper_accuracy_percent": 78.28,
+          "measured_accuracy_percent": 78.28,
+          "signed_gap_points": 0.0,
+          "absolute_gap_points": 0.0,
+          "selected_gamma": 5870.0
+        },
+        {
+          "severity": 4,
+          "file": "jitter_3.h5",
+          "paper_accuracy_percent": 69.69,
+          "measured_accuracy_percent": 69.69,
+          "signed_gap_points": 0.0,
+          "absolute_gap_points": 0.0,
+          "selected_gamma": 4900.0
+        },
+        {
+          "severity": 5,
+          "file": "jitter_4.h5",
+          "paper_accuracy_percent": 60.9,
+          "measured_accuracy_percent": 60.9,
+          "signed_gap_points": 0.0,
+          "absolute_gap_points": 0.0,
+          "selected_gamma": 3900.0
+        }
+      ]
+    },
+    {
+      "mode": "global",
+      "paper_algorithm": "Algorithm 1",
+      "corruption": "add_global",
+      "mapping_status": "PAPER_MAPPING_UNCERTAIN",
+      "severity_files": [
+        "add_global_0.h5",
+        "add_global_1.h5",
+        "add_global_2.h5",
+        "add_global_3.h5",
+        "add_global_4.h5"
+      ],
+      "k": [
+        110,
+        110,
+        110,
+        110
+      ],
+      "points": [
+        1024,
+        512,
+        256,
+        128
+      ],
+      "batch_size": 32,
+      "metric": 2,
+      "rescale": 0.8,
+      "sampling_behavior": "If cloud point count differs from 1024, np.random.choice(full_cloud_length, 1024, replace=True); appended points eligible",
+      "clean_test_accuracy_percent": 81.4,
+      "clean_test_selected_gamma": 8230.0,
+      "exit_code": 0,
+      "mean_absolute_gap_points": 0.0,
+      "severities": [
+        {
+          "severity": 1,
+          "file": "add_global_0.h5",
+          "paper_accuracy_percent": 73.5,
+          "measured_accuracy_percent": 73.5,
+          "signed_gap_points": 0.0,
+          "absolute_gap_points": 0.0,
+          "selected_gamma": 5520.0
+        },
+        {
+          "severity": 2,
+          "file": "add_global_1.h5",
+          "paper_accuracy_percent": 66.17,
+          "measured_accuracy_percent": 66.17,
+          "signed_gap_points": 0.0,
+          "absolute_gap_points": 0.0,
+          "selected_gamma": 5590.0
+        },
+        {
+          "severity": 3,
+          "file": "add_global_2.h5",
+          "paper_accuracy_percent": 58.51,
+          "measured_accuracy_percent": 58.51,
+          "signed_gap_points": 0.0,
+          "absolute_gap_points": 0.0,
+          "selected_gamma": 3220.0
+        },
+        {
+          "severity": 4,
+          "file": "add_global_3.h5",
+          "paper_accuracy_percent": 51.26,
+          "measured_accuracy_percent": 51.26,
+          "signed_gap_points": 0.0,
+          "absolute_gap_points": 0.0,
+          "selected_gamma": 3350.0
+        },
+        {
+          "severity": 5,
+          "file": "add_global_4.h5",
+          "paper_accuracy_percent": 47.16,
+          "measured_accuracy_percent": 47.16,
+          "signed_gap_points": 0.0,
+          "absolute_gap_points": 0.0,
+          "selected_gamma": 2320.0
+        }
+      ]
+    },
+    {
+      "mode": "local",
+      "paper_algorithm": "Algorithm 2",
+      "corruption": "add_global",
+      "mapping_status": "PAPER_MAPPING_UNCERTAIN",
+      "severity_files": [
+        "add_global_0.h5",
+        "add_global_1.h5",
+        "add_global_2.h5",
+        "add_global_3.h5",
+        "add_global_4.h5"
+      ],
+      "k": [
+        110,
+        110,
+        110,
+        110
+      ],
+      "points": [
+        1024,
+        512,
+        256,
+        128
+      ],
+      "batch_size": 32,
+      "metric": 2,
+      "rescale": 0.8,
+      "sampling_behavior": "If cloud point count differs from 1024, np.random.choice(full_cloud_length, 1024, replace=True); appended points eligible",
+      "clean_test_accuracy_percent": 83.39,
+      "clean_test_selected_gamma": 4910.0,
+      "exit_code": 0,
+      "mean_absolute_gap_points": 0.0,
+      "severities": [
+        {
+          "severity": 1,
+          "file": "add_global_0.h5",
+          "paper_accuracy_percent": 44.69,
+          "measured_accuracy_percent": 44.69,
+          "signed_gap_points": 0.0,
+          "absolute_gap_points": 0.0,
+          "selected_gamma": 4090.0
+        },
+        {
+          "severity": 2,
+          "file": "add_global_1.h5",
+          "paper_accuracy_percent": 33.43,
+          "measured_accuracy_percent": 33.43,
+          "signed_gap_points": 0.0,
+          "absolute_gap_points": 0.0,
+          "selected_gamma": 2730.0
+        },
+        {
+          "severity": 3,
+          "file": "add_global_2.h5",
+          "paper_accuracy_percent": 23.58,
+          "measured_accuracy_percent": 23.58,
+          "signed_gap_points": 0.0,
+          "absolute_gap_points": 0.0,
+          "selected_gamma": 4430.0
+        },
+        {
+          "severity": 4,
+          "file": "add_global_3.h5",
+          "paper_accuracy_percent": 20.14,
+          "measured_accuracy_percent": 20.14,
+          "signed_gap_points": 0.0,
+          "absolute_gap_points": 0.0,
+          "selected_gamma": 3580.0
+        },
+        {
+          "severity": 5,
+          "file": "add_global_4.h5",
+          "paper_accuracy_percent": 17.42,
+          "measured_accuracy_percent": 17.42,
+          "signed_gap_points": 0.0,
+          "absolute_gap_points": 0.0,
+          "selected_gamma": 3110.0
+        }
+      ]
+    },
+    {
+      "mode": "united",
+      "paper_algorithm": "Algorithms 1 & 2",
+      "corruption": "add_global",
+      "mapping_status": "PAPER_MAPPING_UNCERTAIN",
+      "severity_files": [
+        "add_global_0.h5",
+        "add_global_1.h5",
+        "add_global_2.h5",
+        "add_global_3.h5",
+        "add_global_4.h5"
+      ],
+      "k": [
+        110,
+        110,
+        110,
+        110
+      ],
+      "points": [
+        1024,
+        512,
+        256,
+        128
+      ],
+      "batch_size": 32,
+      "metric": 2,
+      "rescale": 0.8,
+      "sampling_behavior": "If cloud point count differs from 1024, np.random.choice(full_cloud_length, 1024, replace=True); appended points eligible",
+      "clean_test_accuracy_percent": 84.72,
+      "clean_test_selected_gamma": 6080.0,
+      "exit_code": 0,
+      "mean_absolute_gap_points": 0.0,
+      "severities": [
+        {
+          "severity": 1,
+          "file": "add_global_0.h5",
+          "paper_accuracy_percent": 58.02,
+          "measured_accuracy_percent": 58.02,
+          "signed_gap_points": 0.0,
+          "absolute_gap_points": 0.0,
+          "selected_gamma": 4240.0
+        },
+        {
+          "severity": 2,
+          "file": "add_global_1.h5",
+          "paper_accuracy_percent": 45.18,
+          "measured_accuracy_percent": 45.18,
+          "signed_gap_points": 0.0,
+          "absolute_gap_points": 0.0,
+          "selected_gamma": 3390.0
+        },
+        {
+          "severity": 3,
+          "file": "add_global_2.h5",
+          "paper_accuracy_percent": 36.51,
+          "measured_accuracy_percent": 36.51,
+          "signed_gap_points": 0.0,
+          "absolute_gap_points": 0.0,
+          "selected_gamma": 2580.0
+        },
+        {
+          "severity": 4,
+          "file": "add_global_3.h5",
+          "paper_accuracy_percent": 29.7,
+          "measured_accuracy_percent": 29.7,
+          "signed_gap_points": 0.0,
+          "absolute_gap_points": 0.0,
+          "selected_gamma": 2060.0
+        },
+        {
+          "severity": 5,
+          "file": "add_global_4.h5",
+          "paper_accuracy_percent": 24.84,
+          "measured_accuracy_percent": 24.84,
+          "signed_gap_points": 0.0,
+          "absolute_gap_points": 0.0,
+          "selected_gamma": 1750.0
+        }
+      ]
+    }
+  ],
+  "logs": [
+    "jitter.log",
+    "add_global.log"
+  ]
+}

@@ -1,0 +1,3 @@
+# Table VII plain ModelNet-C
+
+Historical runner: `reconstruction/run_cls_modelnetcv2.py`, evaluated via an original-compatible scope-limited copy in the forensic workspace. The saved calls used surface `knnxyz`, corruptions `jitter` and `add_global`, and the `global`, `local`, `united` modes. γ was selected separately on each corrupted severity's labeled test set. Input sampling included appended points from the full corrupted cloud. All [30 plain values](../../results/modelnetc/summary.json) match the paper to two decimals. The source-name mapping of `add_global` is inferred from numerical agreement. Historical source is not redistributed here.

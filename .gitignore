@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
+*~
+*.swp
+*.swo
+.venv/
+venv/
+env/
+
+# Place input datasets outside this source-only release.
+/data/
+/datasets/

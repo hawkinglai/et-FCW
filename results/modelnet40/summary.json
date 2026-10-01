@@ -1,0 +1,9 @@
+{
+  "status": "VERIFIED_REPRODUCTION",
+  "paper_accuracy_percent": 84.8,
+  "measured_accuracy_percent": 85.1297,
+  "selected_gamma": 6090,
+  "gamma_selection": "Original search over 0,2,...,9998 using labeled test data",
+  "historical_entry_point": "reconstruction/scripts/modelnet.sh",
+  "log": "stdout_stderr.log"
+}

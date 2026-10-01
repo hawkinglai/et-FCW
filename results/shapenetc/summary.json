@@ -1,0 +1,64 @@
+{
+  "status": "VERIFIED_REPRODUCTION",
+  "historical_entry_point": "reconstruction/run_part_cv2.py",
+  "runs": [
+    {
+      "corruption": "jitter",
+      "surface": "knnxyz",
+      "status": "VERIFIED_REPRODUCTION",
+      "paper": [
+        62.49,
+        61.74,
+        60.83,
+        59.34,
+        57.57
+      ],
+      "measured": [
+        62.49,
+        61.74,
+        60.83,
+        59.34,
+        57.57
+      ],
+      "signed_gaps": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mean_absolute_gap": 0.0
+    },
+    {
+      "corruption": "add_global",
+      "surface": "knnxyz",
+      "status": "VERIFIED_REPRODUCTION",
+      "paper": [
+        61.63,
+        60.67,
+        59.74,
+        59.02,
+        58.2
+      ],
+      "measured": [
+        61.63,
+        60.67,
+        59.74,
+        59.02,
+        58.2
+      ],
+      "signed_gaps": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mean_absolute_gap": 0.0
+    }
+  ],
+  "logs": [
+    "jitter.log",
+    "add_global.log"
+  ]
+}

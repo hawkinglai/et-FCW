@@ -1,0 +1,8 @@
+==> Loading args..
+Namespace(bz=128, points=[1024, 512, 256, 128], stages=4, k=[105, 105, 110, 120], metric=2, rescale=0.2, surface='geobp', de_k=3, gamma=230)
+==> Preparing model..
+==> Preparing data..
+==> Constructing Point-Memory Bank..
+==> Starting Point-NN..
+Elapsed time: 110.57131910324097 seconds
+Point-NN's part segmentation mIoU: 68.68.

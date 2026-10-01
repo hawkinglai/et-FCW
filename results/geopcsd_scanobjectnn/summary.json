@@ -1,0 +1,99 @@
+{
+  "status": "CORRECTED_RECONSTRUCTION",
+  "method": "local neighbor-index correction; published GeoPCSD source not verified",
+  "mean_before_percent": 66.1996,
+  "mean_corrected_percent": 66.9117,
+  "mean_gain_points": 0.7121,
+  "results": [
+    {
+      "split": "obj_bg",
+      "paper_accuracy_percent": 69.0,
+      "before_local_correction_percent": 69.0189,
+      "corrected_accuracy_percent": 69.7074,
+      "gain_points": 0.6885,
+      "selected_gamma": 5434.0,
+      "effective_parameters": {
+        "split": 1,
+        "batch_size": 64,
+        "points": [
+          1024,
+          512,
+          256,
+          128
+        ],
+        "stages": 4,
+        "k": [
+          90,
+          90,
+          90,
+          90
+        ],
+        "metric": 2,
+        "rescale": 0.8,
+        "surface": "geobp",
+        "torch_seed": 3407
+      },
+      "log": "obj_bg.log"
+    },
+    {
+      "split": "obj_only",
+      "paper_accuracy_percent": 72.0,
+      "before_local_correction_percent": 71.7728,
+      "corrected_accuracy_percent": 72.9776,
+      "gain_points": 1.2048,
+      "selected_gamma": 4152.0,
+      "effective_parameters": {
+        "split": 2,
+        "batch_size": 64,
+        "points": [
+          1024,
+          512,
+          256,
+          128
+        ],
+        "stages": 4,
+        "k": [
+          90,
+          90,
+          90,
+          90
+        ],
+        "metric": 2,
+        "rescale": 0.8,
+        "surface": "geobp",
+        "torch_seed": 3407
+      },
+      "log": "obj_only.log"
+    },
+    {
+      "split": "pb_t50_rs",
+      "paper_accuracy_percent": 57.8,
+      "before_local_correction_percent": 57.8071,
+      "corrected_accuracy_percent": 58.05,
+      "gain_points": 0.2429,
+      "selected_gamma": 3550.0,
+      "effective_parameters": {
+        "split": 3,
+        "batch_size": 32,
+        "points": [
+          1024,
+          512,
+          256,
+          128
+        ],
+        "stages": 4,
+        "k": [
+          90,
+          90,
+          90,
+          90
+        ],
+        "metric": 2,
+        "rescale": 0.8,
+        "surface": "geobp",
+        "torch_seed": 3407
+      },
+      "log": "pb_t50_rs.log"
+    }
+  ]
+}

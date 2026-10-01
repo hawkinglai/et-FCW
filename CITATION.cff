@@ -1,0 +1,42 @@
+cff-version: 1.2.0
+message: "Cite the journal article for the scientific method. See docs/reproduction_status.md for reproduction caveats. Repository contributor metadata remain unverified."
+title: "A Unified Non-Parametric and Interpretable Point Cloud Analysis Via t-FCW Graph Representation"
+type: software
+authors:
+  - family-names: Lai
+    given-names: Haijian
+  - family-names: Liu
+    given-names: Bowen
+  - family-names: Xu
+    given-names: Man
+  - family-names: Lam
+    given-names: Chan-Tong
+  - family-names: Macedo
+    given-names: João
+  - family-names: Ng
+    given-names: Benjamin
+  - family-names: Im
+    given-names: Sio-Kei
+preferred-citation:
+  type: article
+  title: "A Unified Non-Parametric and Interpretable Point Cloud Analysis Via t-FCW Graph Representation"
+  authors:
+    - family-names: Lai
+      given-names: Haijian
+    - family-names: Liu
+      given-names: Bowen
+    - family-names: Xu
+      given-names: Man
+    - family-names: Lam
+      given-names: Chan-Tong
+    - family-names: Macedo
+      given-names: João
+    - family-names: Ng
+      given-names: Benjamin
+    - family-names: Im
+      given-names: Sio-Kei
+  year: 2026
+  journal: "IEEE Transactions on Multimedia"
+  start: 1
+  end: 12
+  doi: "10.1109/TMM.2026.3716075"

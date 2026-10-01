@@ -1,0 +1,26 @@
+{
+  "status": "CORRECTED_RECONSTRUCTION",
+  "paper_geopcsd_miou_percent": 66.8,
+  "before_local_correction_miou_percent": 68.34,
+  "corrected_miou_percent": 68.68,
+  "gain_points": 0.34,
+  "gamma": 230,
+  "encoder_k": [
+    105,
+    105,
+    110,
+    120
+  ],
+  "decoder_k": 3,
+  "points": [
+    1024,
+    512,
+    256,
+    128
+  ],
+  "split": "trainval -> test",
+  "torch_seed": 3407,
+  "numpy_seed": "PyTorch DataLoader worker state derived from Torch seed; no explicit NumPy seed",
+  "semantic_changes_beyond_neighbor_index": false,
+  "log": "stdout_stderr.log"
+}
