@@ -8,9 +8,9 @@
   "log": "port_check.log",
   "exit_code": 0,
   "wall_seconds": 719.779,
-  "acceptance_rule": "Match ten knnxyz corrupted-set values to two decimals.",
-  "expected_comparison_count": 10,
-  "observed_comparison_count": 10,
+  "acceptance_rule": "Match ten knnxyz corrupted-set values and two clean baselines to two decimals.",
+  "expected_comparison_count": 12,
+  "observed_comparison_count": 12,
   "records": [
     {
       "corruption": "jitter",
@@ -101,10 +101,30 @@
       "reference_percent": 58.2,
       "acceptance_pass": true,
       "status": "PASS"
+    },
+    {
+      "corruption": "jitter",
+      "surface": "knnxyz",
+      "severity": 0,
+      "measured_percent": 62.78,
+      "reference_percent": 62.78,
+      "reference_source": "historical log results/shapenetc/jitter.log",
+      "acceptance_pass": true,
+      "status": "PASS"
+    },
+    {
+      "corruption": "add_global",
+      "surface": "knnxyz",
+      "severity": 0,
+      "measured_percent": 62.78,
+      "reference_percent": 62.78,
+      "reference_source": "historical log results/shapenetc/add_global.log",
+      "acceptance_pass": true,
+      "status": "PASS"
     }
   ],
   "pythonpath_removed": true,
   "tuning_performed": false,
   "runner_byte_identical": true,
-  "log_format": "measurement excerpt from completed acceptance run"
+  "log_format": "raw program output from the completed original-runner acceptance run"
 }

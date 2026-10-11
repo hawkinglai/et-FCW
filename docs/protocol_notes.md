@@ -18,6 +18,4 @@ RISP ignores surface and rescale, rotates xyz and normals together, and evaluate
 
 Corruption filenames indexed 0–4 correspond to severities 1–5. `add_global` corresponds numerically to paper Global. ShapeNet-C test category labels select the part memory bank.
 
-The [separate train-selected ModelNet-C experiment](../../mnc_fixedgamma_v1/summary.md) uses saved batch-32 features, five-fold stratified clean-training CV (seed 0), γ grid 0,10,…,9990, and the smallest γ on ties. One γ per mode is fixed for clean and all ten corruptions. NEW EXPERIMENT — NOT A REPRODUCTION.
-
 The [GeoPCSD correction](geopcsd_correction.md) and [patch](../provenance/geopcsd_neighbor_fix.patch) record the neighbor-index change in the two corrected experiments.

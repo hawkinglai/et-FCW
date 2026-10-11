@@ -15,10 +15,10 @@ Parameters: batch 128; points [1024,512,256,128]; encoder K [105,105,110,120]; d
 Batch-wide standard deviation makes features depend on batch composition. Non-1024 clouds are sampled with replacement with matching xyz/part-label indices; no explicit top-level NumPy seed. Test category labels select the part memory bank.
 The original runner also evaluates a second surface (`geobp`), whose output is not part of the reported results and should be ignored.
 
-| knnxyz corruption | S1 | S2 | S3 | S4 | S5 |
-|---|---:|---:|---:|---:|---:|
-| jitter | 62.49 | 61.74 | 60.83 | 59.34 | 57.57 |
-| add_global | 61.63 | 60.67 | 59.74 | 59.02 | 58.20 |
+| knnxyz corruption | Clean | S1 | S2 | S3 | S4 | S5 |
+|---|---:|---:|---:|---:|---:|---:|
+| jitter | 62.78 | 62.49 | 61.74 | 60.83 | 59.34 | 57.57 |
+| add_global | 62.78 | 61.63 | 60.67 | 59.74 | 59.02 | 58.20 |
 
-All ten values match to two decimals. `add_global` corresponds numerically to paper Global.
+The clean value is the ShapeNet-C `clean.h5` baseline (62.78% mIoU), evaluated with a different loader from ShapeNet-Part’s 70.18% mIoU. Ten corrupted values and both clean baselines match to two decimals. `add_global` corresponds numerically to paper Global.
 [Summary](../../results/shapenetc/summary.json) · [Acceptance](../../results/shapenetc/port_check.json).

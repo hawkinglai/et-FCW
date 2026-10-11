@@ -13,5 +13,3 @@
 The five numerical acceptance records and corresponding logs are under [results](../results/). RISP acceptance used properly installed PyTorch3D 0.7.8. GeoPCSD current records check saved-log consistency and unchanged source packaging; no numerical rerun was performed during release cleanup.
 
 [Protocols](protocol_notes.md) specify γ selection and data behaviors. [Correction details](geopcsd_correction.md) apply to the two corrected GeoPCSD experiments.
-
-[ModelNet-C with a single train-selected γ (thesis protocol)](../../mnc_fixedgamma_v1/summary.md): NEW EXPERIMENT — NOT A REPRODUCTION. Sanity gate: 36/36 matched; determinism: 36/36 feature and label sets bit-identical. Selected γ: global 9500, local 5260, united 5440.

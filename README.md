@@ -13,13 +13,10 @@ Commands run from this directory with the dataset variables and CUDA environment
 | ModelNet-C global / add_global | VII | Clean 81.40; 73.50, 66.17, 58.51, 51.26, 47.16 | Same command |
 | ModelNet-C local / add_global | VII | Clean 83.39; 44.69, 33.43, 23.58, 20.14, 17.42 | Same command |
 | ModelNet-C united / add_global | VII | Clean 84.72; 58.02, 45.18, 36.51, 29.70, 24.84 | Same command |
-| ShapeNet-C knnxyz / jitter | VIII | 62.49, 61.74, 60.83, 59.34, 57.57 | `bash experiments/shapenetc/run.sh` |
-| ShapeNet-C knnxyz / add_global | VIII | 61.63, 60.67, 59.74, 59.02, 58.20 | Same command |
+| ShapeNet-C knnxyz / jitter | VIII | Clean 62.78; 62.49, 61.74, 60.83, 59.34, 57.57 | `bash experiments/shapenetc/run.sh` |
+| ShapeNet-C knnxyz / add_global | VIII | Clean 62.78; 61.63, 60.67, 59.74, 59.02, 58.20 | Same command |
 | Corrected GeoPCSD / ScanObjectNN | II, corrected local reconstruction | OBJ-BG 69.7074; OBJ-ONLY 72.9776; PB-T50-RS 58.0500 | `bash experiments/geopcsd_scanobjectnn/run.sh obj_bg` (also `obj_only`, `pb_t50_rs`) |
 | Corrected GeoPCSD / ShapeNet-Part | IV, corrected local reconstruction | 68.68 mIoU | `bash experiments/geopcsd_shapenet_part/run.sh` |
-| [ModelNet-C with a single train-selected γ (thesis protocol)](../mnc_fixedgamma_v1/summary.md) — global | NEW EXPERIMENT — NOT A REPRODUCTION | γ9500; mean(S1–S5): jitter 63.1848, add_global 55.9643 | `cd ../mnc_fixedgamma_v1 && python extract_gate.py && python cv_evaluate.py` |
-| ↳ local | NEW EXPERIMENT — NOT A REPRODUCTION | γ5260; mean(S1–S5): jitter 76.2723, add_global 27.0989 | Same external command |
-| ↳ united | NEW EXPERIMENT — NOT A REPRODUCTION | γ5440; mean(S1–S5): jitter 74.9190, add_global 38.0470 | Same external command |
 
 Data: [DATA.md](DATA.md) specifies dataset layouts and environment variables. Datasets and point-cloud caches are not included. `add_global` corresponds numerically to paper Global.
 
