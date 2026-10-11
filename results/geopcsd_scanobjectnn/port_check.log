@@ -1,0 +1,5 @@
+Saved-result consistency check; no new numerical execution.
+obj_bg: classification accuracy: 69.7074 with best gamma=5434.0.
+obj_only: classification accuracy: 72.9776 with best gamma=4152.0.
+pb_t50_rs: classification accuracy: 58.0500 with best gamma=3550.0.
+PASS

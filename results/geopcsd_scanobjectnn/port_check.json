@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "check_type": "saved corrected-result log consistency and unchanged-source packaging",
+  "numerical_rerun_performed": false,
+  "result_status": "CORRECTED_RECONSTRUCTION",
+  "records": [
+    {
+      "split": "obj_bg",
+      "accuracy_percent": 69.7074,
+      "selected_gamma": 5434.0,
+      "saved_log_matches_summary": true
+    },
+    {
+      "split": "obj_only",
+      "accuracy_percent": 72.9776,
+      "selected_gamma": 4152.0,
+      "saved_log_matches_summary": true
+    },
+    {
+      "split": "pb_t50_rs",
+      "accuracy_percent": 58.05,
+      "selected_gamma": 3550.0,
+      "saved_log_matches_summary": true
+    }
+  ],
+  "log": "port_check.log"
+}

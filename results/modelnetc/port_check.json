@@ -1,0 +1,343 @@
+{
+  "status": "PASS",
+  "reason": null,
+  "command": [
+    "bash",
+    "experiments/modelnetc/run.sh"
+  ],
+  "log": "port_check.log",
+  "exit_code": 0,
+  "wall_seconds": 131.044,
+  "acceptance_rule": "Match printed accuracies to two decimals; gamma excluded",
+  "expected_comparison_count": 36,
+  "observed_comparison_count": 36,
+  "records": [
+    {
+      "corruption": "jitter",
+      "mode": "global",
+      "severity": 0,
+      "measured_percent": 81.4,
+      "reference_percent": 81.4,
+      "acceptance_pass": true,
+      "status": "PASS"
+    },
+    {
+      "corruption": "jitter",
+      "mode": "global",
+      "severity": 1,
+      "measured_percent": 80.27,
+      "reference_percent": 80.27,
+      "acceptance_pass": true,
+      "status": "PASS"
+    },
+    {
+      "corruption": "jitter",
+      "mode": "global",
+      "severity": 2,
+      "measured_percent": 75.41,
+      "reference_percent": 75.41,
+      "acceptance_pass": true,
+      "status": "PASS"
+    },
+    {
+      "corruption": "jitter",
+      "mode": "global",
+      "severity": 3,
+      "measured_percent": 64.51,
+      "reference_percent": 64.51,
+      "acceptance_pass": true,
+      "status": "PASS"
+    },
+    {
+      "corruption": "jitter",
+      "mode": "global",
+      "severity": 4,
+      "measured_percent": 53.93,
+      "reference_percent": 53.93,
+      "acceptance_pass": true,
+      "status": "PASS"
+    },
+    {
+      "corruption": "jitter",
+      "mode": "global",
+      "severity": 5,
+      "measured_percent": 46.07,
+      "reference_percent": 46.07,
+      "acceptance_pass": true,
+      "status": "PASS"
+    },
+    {
+      "corruption": "jitter",
+      "mode": "local",
+      "severity": 0,
+      "measured_percent": 83.39,
+      "reference_percent": 83.39,
+      "acceptance_pass": true,
+      "status": "PASS"
+    },
+    {
+      "corruption": "jitter",
+      "mode": "local",
+      "severity": 1,
+      "measured_percent": 82.7,
+      "reference_percent": 82.7,
+      "acceptance_pass": true,
+      "status": "PASS"
+    },
+    {
+      "corruption": "jitter",
+      "mode": "local",
+      "severity": 2,
+      "measured_percent": 82.05,
+      "reference_percent": 82.05,
+      "acceptance_pass": true,
+      "status": "PASS"
+    },
+    {
+      "corruption": "jitter",
+      "mode": "local",
+      "severity": 3,
+      "measured_percent": 78.48,
+      "reference_percent": 78.48,
+      "acceptance_pass": true,
+      "status": "PASS"
+    },
+    {
+      "corruption": "jitter",
+      "mode": "local",
+      "severity": 4,
+      "measured_percent": 73.14,
+      "reference_percent": 73.14,
+      "acceptance_pass": true,
+      "status": "PASS"
+    },
+    {
+      "corruption": "jitter",
+      "mode": "local",
+      "severity": 5,
+      "measured_percent": 66.65,
+      "reference_percent": 66.65,
+      "acceptance_pass": true,
+      "status": "PASS"
+    },
+    {
+      "corruption": "jitter",
+      "mode": "united",
+      "severity": 0,
+      "measured_percent": 84.72,
+      "reference_percent": 84.72,
+      "acceptance_pass": true,
+      "status": "PASS"
+    },
+    {
+      "corruption": "jitter",
+      "mode": "united",
+      "severity": 1,
+      "measured_percent": 84.4,
+      "reference_percent": 84.4,
+      "acceptance_pass": true,
+      "status": "PASS"
+    },
+    {
+      "corruption": "jitter",
+      "mode": "united",
+      "severity": 2,
+      "measured_percent": 82.54,
+      "reference_percent": 82.54,
+      "acceptance_pass": true,
+      "status": "PASS"
+    },
+    {
+      "corruption": "jitter",
+      "mode": "united",
+      "severity": 3,
+      "measured_percent": 78.28,
+      "reference_percent": 78.28,
+      "acceptance_pass": true,
+      "status": "PASS"
+    },
+    {
+      "corruption": "jitter",
+      "mode": "united",
+      "severity": 4,
+      "measured_percent": 69.69,
+      "reference_percent": 69.69,
+      "acceptance_pass": true,
+      "status": "PASS"
+    },
+    {
+      "corruption": "jitter",
+      "mode": "united",
+      "severity": 5,
+      "measured_percent": 60.9,
+      "reference_percent": 60.9,
+      "acceptance_pass": true,
+      "status": "PASS"
+    },
+    {
+      "corruption": "add_global",
+      "mode": "global",
+      "severity": 0,
+      "measured_percent": 81.4,
+      "reference_percent": 81.4,
+      "acceptance_pass": true,
+      "status": "PASS"
+    },
+    {
+      "corruption": "add_global",
+      "mode": "global",
+      "severity": 1,
+      "measured_percent": 73.5,
+      "reference_percent": 73.5,
+      "acceptance_pass": true,
+      "status": "PASS"
+    },
+    {
+      "corruption": "add_global",
+      "mode": "global",
+      "severity": 2,
+      "measured_percent": 66.17,
+      "reference_percent": 66.17,
+      "acceptance_pass": true,
+      "status": "PASS"
+    },
+    {
+      "corruption": "add_global",
+      "mode": "global",
+      "severity": 3,
+      "measured_percent": 58.51,
+      "reference_percent": 58.51,
+      "acceptance_pass": true,
+      "status": "PASS"
+    },
+    {
+      "corruption": "add_global",
+      "mode": "global",
+      "severity": 4,
+      "measured_percent": 51.26,
+      "reference_percent": 51.26,
+      "acceptance_pass": true,
+      "status": "PASS"
+    },
+    {
+      "corruption": "add_global",
+      "mode": "global",
+      "severity": 5,
+      "measured_percent": 47.16,
+      "reference_percent": 47.16,
+      "acceptance_pass": true,
+      "status": "PASS"
+    },
+    {
+      "corruption": "add_global",
+      "mode": "local",
+      "severity": 0,
+      "measured_percent": 83.39,
+      "reference_percent": 83.39,
+      "acceptance_pass": true,
+      "status": "PASS"
+    },
+    {
+      "corruption": "add_global",
+      "mode": "local",
+      "severity": 1,
+      "measured_percent": 44.69,
+      "reference_percent": 44.69,
+      "acceptance_pass": true,
+      "status": "PASS"
+    },
+    {
+      "corruption": "add_global",
+      "mode": "local",
+      "severity": 2,
+      "measured_percent": 33.43,
+      "reference_percent": 33.43,
+      "acceptance_pass": true,
+      "status": "PASS"
+    },
+    {
+      "corruption": "add_global",
+      "mode": "local",
+      "severity": 3,
+      "measured_percent": 23.58,
+      "reference_percent": 23.58,
+      "acceptance_pass": true,
+      "status": "PASS"
+    },
+    {
+      "corruption": "add_global",
+      "mode": "local",
+      "severity": 4,
+      "measured_percent": 20.14,
+      "reference_percent": 20.14,
+      "acceptance_pass": true,
+      "status": "PASS"
+    },
+    {
+      "corruption": "add_global",
+      "mode": "local",
+      "severity": 5,
+      "measured_percent": 17.42,
+      "reference_percent": 17.42,
+      "acceptance_pass": true,
+      "status": "PASS"
+    },
+    {
+      "corruption": "add_global",
+      "mode": "united",
+      "severity": 0,
+      "measured_percent": 84.72,
+      "reference_percent": 84.72,
+      "acceptance_pass": true,
+      "status": "PASS"
+    },
+    {
+      "corruption": "add_global",
+      "mode": "united",
+      "severity": 1,
+      "measured_percent": 58.02,
+      "reference_percent": 58.02,
+      "acceptance_pass": true,
+      "status": "PASS"
+    },
+    {
+      "corruption": "add_global",
+      "mode": "united",
+      "severity": 2,
+      "measured_percent": 45.18,
+      "reference_percent": 45.18,
+      "acceptance_pass": true,
+      "status": "PASS"
+    },
+    {
+      "corruption": "add_global",
+      "mode": "united",
+      "severity": 3,
+      "measured_percent": 36.51,
+      "reference_percent": 36.51,
+      "acceptance_pass": true,
+      "status": "PASS"
+    },
+    {
+      "corruption": "add_global",
+      "mode": "united",
+      "severity": 4,
+      "measured_percent": 29.7,
+      "reference_percent": 29.7,
+      "acceptance_pass": true,
+      "status": "PASS"
+    },
+    {
+      "corruption": "add_global",
+      "mode": "united",
+      "severity": 5,
+      "measured_percent": 24.84,
+      "reference_percent": 24.84,
+      "acceptance_pass": true,
+      "status": "PASS"
+    }
+  ],
+  "pythonpath_removed": true,
+  "tuning_performed": false,
+  "runner_byte_identical": true
+}

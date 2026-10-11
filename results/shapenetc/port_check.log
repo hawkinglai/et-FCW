@@ -1,0 +1,11 @@
+Acceptance log excerpt: knnxyz corrupted-set measurements from the completed original-runner execution.
+jitter: Severity 1: mIoU 62.49%
+jitter: Severity 2: mIoU 61.74%
+jitter: Severity 3: mIoU 60.83%
+jitter: Severity 4: mIoU 59.34%
+jitter: Severity 5: mIoU 57.57%
+add_global: Severity 1: mIoU 61.63%
+add_global: Severity 2: mIoU 60.67%
+add_global: Severity 3: mIoU 59.74%
+add_global: Severity 4: mIoU 59.02%
+add_global: Severity 5: mIoU 58.20%

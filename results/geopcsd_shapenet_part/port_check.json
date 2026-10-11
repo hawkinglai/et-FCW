@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "check_type": "saved corrected-result log consistency and unchanged-source packaging",
+  "numerical_rerun_performed": false,
+  "result_status": "CORRECTED_RECONSTRUCTION",
+  "records": [
+    {
+      "miou_percent": 68.68,
+      "gamma": 230,
+      "saved_log_matches_summary": true
+    }
+  ],
+  "log": "port_check.log"
+}

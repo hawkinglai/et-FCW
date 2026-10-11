@@ -1,5 +1,24 @@
-# Corrected GeoPCSD: ScanObjectNN
+# Corrected GeoPCSD — ScanObjectNN
 
-This is the canonical **local corrected reconstruction**, not proof of the unpublished paper implementation. The minimal source is `run_cls.py`, `models/`, and `dataloaders/`. The [launcher](run.sh) selects the saved split and batch size. It requires `TFCW_SCANOBJECTNN_DATALOADERS_ROOT` pointing to a directory containing `data/h5_files/`. The imported ModelNet loader is present only because the original runner imports it; if ModelNet is explicitly selected, it additionally requires `TFCW_MODELNET_DATA_ROOT`.
+Use the CUDA environment in [ENVIRONMENT.md](../../ENVIRONMENT.md); run commands from the release root.
 
-Use `bash run.sh obj_bg`, `bash run.sh obj_only`, or `bash run.sh pb_t50_rs` from this directory after configuring the dataset path and CUDA environment. This is a command reference, not a request to rerun completed results. The launcher preserves surface `geobp`, K `[90,90,90,90]`, point hierarchy `[1024,512,256,128]`, rescale 0.8, Torch seed 3407, and the original labeled-test γ search. The only algorithmic correction is documented in [the patch](../../provenance/geopcsd_neighbor_fix.patch). The loader's path substitution is an engineering portability change. See the [curated results](../../results/geopcsd_scanobjectnn/summary.json).
+```bash
+export TFCW_SCANOBJECTNN_DATALOADERS_ROOT=/path/to/dataloaders
+bash experiments/geopcsd_scanobjectnn/run.sh obj_bg
+bash experiments/geopcsd_scanobjectnn/run.sh obj_only
+bash experiments/geopcsd_scanobjectnn/run.sh pb_t50_rs
+```
+
+Data: `$TFCW_SCANOBJECTNN_DATALOADERS_ROOT/data/h5_files/`, with the OBJ-BG, OBJ-ONLY and PB-T50-RS HDF5 splits; see loader filenames in `dataloaders/ScanObjectNN.py`.
+Parameters: points [1024,512,256,128]; K [90,90,90,90]; metric 2; rescale 0.8; geobp; Torch seed 3407. Batch 64 for OBJ-BG/OBJ-ONLY, 32 for PB-T50-RS.
+γ protocol: select on labeled test data over 0,2,…,9998.
+Keep the recorded batch sizes and original loader ordering/sampling. Batch-wide knnxyz standard deviation is not used by this surface.
+
+| Split | Accuracy (%) | γ |
+|---|---:|---:|
+| OBJ-BG | 69.7074 | 5434 |
+| OBJ-ONLY | 72.9776 | 4152 |
+| PB-T50-RS | 58.0500 | 3550 |
+
+Status: corrected local reconstruction; [neighbor correction](../../docs/geopcsd_correction.md).
+[Summary](../../results/geopcsd_scanobjectnn/summary.json) · [Saved-result consistency check](../../results/geopcsd_scanobjectnn/port_check.json).

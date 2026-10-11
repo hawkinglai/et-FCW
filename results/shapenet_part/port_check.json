@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "reference_miou_percent": 70.18,
+  "strict_tolerance_pp": 0.3,
+  "paper_miou_percent": 70.5,
+  "paper_tolerance_1pp": "PASS",
+  "paper_tolerance_2pp": "PASS",
+  "runs": [
+    {
+      "run": 1,
+      "miou_percent": 70.18,
+      "gap_to_reference_pp": 0.0,
+      "gap_to_paper_pp": -0.32,
+      "strict_pass": true,
+      "log": "port_check.log",
+      "exit_code": 0,
+      "reported_compute_seconds": 47.63970923423767
+    },
+    {
+      "run": 2,
+      "miou_percent": 70.18,
+      "gap_to_reference_pp": 0.0,
+      "gap_to_paper_pp": -0.32,
+      "strict_pass": true,
+      "log": "port_check.log",
+      "exit_code": 0,
+      "reported_compute_seconds": 47.99663853645325
+    },
+    {
+      "run": 3,
+      "miou_percent": 70.18,
+      "gap_to_reference_pp": 0.0,
+      "gap_to_paper_pp": -0.32,
+      "strict_pass": true,
+      "log": "port_check.log",
+      "exit_code": 0,
+      "reported_compute_seconds": 47.53626847267151
+    }
+  ],
+  "gamma": 230,
+  "command": "bash experiments/shapenet_part/run.sh",
+  "numpy_top_level_seed_added": false,
+  "tuning_performed": false,
+  "log": "port_check.log"
+}

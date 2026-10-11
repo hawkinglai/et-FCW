@@ -1,0 +1,110 @@
+{
+  "status": "PASS",
+  "reason": null,
+  "command": [
+    "bash",
+    "experiments/shapenetc/run.sh"
+  ],
+  "log": "port_check.log",
+  "exit_code": 0,
+  "wall_seconds": 719.779,
+  "acceptance_rule": "Match ten knnxyz corrupted-set values to two decimals.",
+  "expected_comparison_count": 10,
+  "observed_comparison_count": 10,
+  "records": [
+    {
+      "corruption": "jitter",
+      "surface": "knnxyz",
+      "severity": 1,
+      "measured_percent": 62.49,
+      "reference_percent": 62.49,
+      "acceptance_pass": true,
+      "status": "PASS"
+    },
+    {
+      "corruption": "jitter",
+      "surface": "knnxyz",
+      "severity": 2,
+      "measured_percent": 61.74,
+      "reference_percent": 61.74,
+      "acceptance_pass": true,
+      "status": "PASS"
+    },
+    {
+      "corruption": "jitter",
+      "surface": "knnxyz",
+      "severity": 3,
+      "measured_percent": 60.83,
+      "reference_percent": 60.83,
+      "acceptance_pass": true,
+      "status": "PASS"
+    },
+    {
+      "corruption": "jitter",
+      "surface": "knnxyz",
+      "severity": 4,
+      "measured_percent": 59.34,
+      "reference_percent": 59.34,
+      "acceptance_pass": true,
+      "status": "PASS"
+    },
+    {
+      "corruption": "jitter",
+      "surface": "knnxyz",
+      "severity": 5,
+      "measured_percent": 57.57,
+      "reference_percent": 57.57,
+      "acceptance_pass": true,
+      "status": "PASS"
+    },
+    {
+      "corruption": "add_global",
+      "surface": "knnxyz",
+      "severity": 1,
+      "measured_percent": 61.63,
+      "reference_percent": 61.63,
+      "acceptance_pass": true,
+      "status": "PASS"
+    },
+    {
+      "corruption": "add_global",
+      "surface": "knnxyz",
+      "severity": 2,
+      "measured_percent": 60.67,
+      "reference_percent": 60.67,
+      "acceptance_pass": true,
+      "status": "PASS"
+    },
+    {
+      "corruption": "add_global",
+      "surface": "knnxyz",
+      "severity": 3,
+      "measured_percent": 59.74,
+      "reference_percent": 59.74,
+      "acceptance_pass": true,
+      "status": "PASS"
+    },
+    {
+      "corruption": "add_global",
+      "surface": "knnxyz",
+      "severity": 4,
+      "measured_percent": 59.02,
+      "reference_percent": 59.02,
+      "acceptance_pass": true,
+      "status": "PASS"
+    },
+    {
+      "corruption": "add_global",
+      "surface": "knnxyz",
+      "severity": 5,
+      "measured_percent": 58.2,
+      "reference_percent": 58.2,
+      "acceptance_pass": true,
+      "status": "PASS"
+    }
+  ],
+  "pythonpath_removed": true,
+  "tuning_performed": false,
+  "runner_byte_identical": true,
+  "log_format": "measurement excerpt from completed acceptance run"
+}
