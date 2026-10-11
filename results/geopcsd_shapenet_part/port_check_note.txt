@@ -1,0 +1,3 @@
+Saved-result consistency check; no new numerical execution.
+Point-NN's part segmentation mIoU: 68.68.
+PASS

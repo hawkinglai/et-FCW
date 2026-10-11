@@ -1,28 +1,21 @@
-# Protocol and command notes
+# Evaluation protocols
 
-## Faithful historical reproduction
-
-The following entry points are **references to the external historical companion source**, not executable files shipped here:
-
-| Result | Historical entry point | Release evidence |
+| Experiment | γ protocol | Result record |
 |---|---|---|
-| ModelNet40 plain | `reconstruction/scripts/modelnet.sh` from the parent of `reconstruction/` | [summary](../results/modelnet40/summary.json), [log](../results/modelnet40/stdout_stderr.log) |
-| ShapeNet-Part plain | `reconstruction/scripts/shapenet.sh` | [summary](../results/shapenet_part/summary.json), [log](../results/shapenet_part/stdout_stderr.log) |
-| RISP rotation | `reconstruction/run_cls_ri.py` with the arguments recorded in the [experiment note](../experiments/risp_rotation/README.md) | [summary](../results/risp_rotation/summary.json), [log](../results/risp_rotation/stdout_stderr.log) |
-| Table VII plain | `reconstruction/run_cls_modelnetcv2.py`; evaluated through a scope-limited original-compatible copy | [summary](../results/modelnetc/summary.json), [logs](../results/modelnetc/) |
-| Table VIII plain | `reconstruction/run_part_cv2.py`; evaluated through a scope-limited original-compatible copy | [summary](../results/shapenetc/summary.json), [logs](../results/shapenetc/) |
+| ModelNet40 | Best labeled-test accuracy, grid 0,2,…,9998; first maximum | [Accepted](../results/modelnet40/port_check.json) |
+| ShapeNet-Part | Fixed γ230 | [Accepted](../results/shapenet_part/port_check.json) |
+| RISP rotation | Independent labeled-test selection for each condition, grid 0,2,…,9998 | [Accepted with installed PyTorch3D](../results/risp_rotation/port_check_installed.json) |
+| ModelNet-C | Independent labeled-test selection for clean and each severity, grid 0,10,…,9990; runner does not print γ | [Accepted](../results/modelnetc/port_check.json) |
+| ShapeNet-C | Fixed γ230; ten knnxyz corruption values | [Accepted](../results/shapenetc/port_check.json) |
+| Corrected GeoPCSD ScanObjectNN | Best labeled-test accuracy, grid 0,2,…,9998 | [Saved corrected results](../results/geopcsd_scanobjectnn/summary.json) |
+| Corrected GeoPCSD ShapeNet-Part | Fixed γ230 | [Saved corrected results](../results/geopcsd_shapenet_part/summary.json) |
 
-ModelNet40 classification searched γ=0,2,…,9998 on labeled test data. RISP selected γ independently for each rotated test condition. ModelNet-C selected γ independently on each corrupted severity's test labels. Those choices are historical behaviors and introduce test-set selection bias. ShapeNet-Part used fixed γ230. The original ShapeNet-Part loader sampled points with replacement without an explicit top-level NumPy seed. ModelNet-C sampled from the full corrupted cloud, including appended points.
+All five plain/RISP experiments passed numerical acceptance. GeoPCSD records retain corrected local results; their current checks compare saved logs with summaries and verify packaging, without a new numerical execution.
 
-The RISP shell script included unsupported rotation arguments; the saved execution omitted only those invalid arguments while the original runner executed all four rotations internally and rotated xyz plus normals. Table VII and VIII release summaries preserve only plain results; corrected GeoPCSD outputs are separate reconstructions.
+`pcs_knnxyz` standard deviation spans the whole batch: preserve batch size and composition. ShapeNet-Part and ShapeNet-C retain NumPy replacement sampling without an explicit top-level NumPy seed. ModelNet-C resamples non-1024 clouds from the entire cloud, including appended points. Keep the original file ordering, DataLoader workers and Torch seed 3407.
 
-## Corrected GeoPCSD reconstruction
+RISP ignores surface and rescale, rotates xyz and normals together, and evaluates all four conditions internally. Its train loader drops the last batch; historical FPS caches are required for the recorded inputs. PyTorch3D 0.7.8 is installed as a package.
 
-- [ScanObjectNN launcher](../experiments/geopcsd_scanobjectnn/run.sh) and [source](../experiments/geopcsd_scanobjectnn/run_cls.py).
-- [ShapeNet-Part launcher](../experiments/geopcsd_shapenet_part/run.sh) and [source](../experiments/geopcsd_shapenet_part/run_part.py).
+Corruption filenames indexed 0–4 correspond to severities 1–5. `add_global` corresponds numerically to paper Global. ShapeNet-C test category labels select the part memory bank.
 
-The release copies apply only the recorded neighbor-index correction plus **path-only** environment-variable substitutions in loaders. The latter require the caller to supply the same datasets at explicit paths; no sampling, model, γ selection, or voting equation was changed. These source copies have unresolved redistribution rights, as described in [LICENSE_STATUS.md](../LICENSE_STATUS.md).
-
-## External source and paths
-
-The authoritative source is expected as a sibling `reconstruction/` directory in a separately licensed companion archive. Original summaries had absolute developer paths; curated public summaries retain experiment settings and numbers without those machine-local paths. The complete original command strings remain in the private forensic audit, not in this source-only public tree. This release is therefore **not source-self-contained for faithful historical runs**.
+The [GeoPCSD correction](geopcsd_correction.md) and [patch](../provenance/geopcsd_neighbor_fix.patch) record the neighbor-index change in the two corrected experiments.

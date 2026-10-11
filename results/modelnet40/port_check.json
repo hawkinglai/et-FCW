@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "strict_acceptance": "PASS",
+  "paper_tolerance_1pp": "PASS",
+  "paper_tolerance_2pp": "PASS",
+  "accuracy_percent": 85.1297,
+  "selected_gamma": 6090.0,
+  "reference_accuracy_percent": 85.1297,
+  "reference_gamma": 6090,
+  "paper_accuracy_percent": 84.8,
+  "paper_gap_pp": 0.3297,
+  "command": "bash experiments/modelnet40/run.sh",
+  "log": "port_check.log",
+  "exit_code": 0,
+  "tuning_performed": false
+}

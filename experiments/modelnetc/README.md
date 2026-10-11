@@ -1,3 +1,26 @@
-# Table VII plain ModelNet-C
+# ModelNet-C plain t-FCW — Table VII
 
-Historical runner: `reconstruction/run_cls_modelnetcv2.py`, evaluated via an original-compatible scope-limited copy in the forensic workspace. The saved calls used surface `knnxyz`, corruptions `jitter` and `add_global`, and the `global`, `local`, `united` modes. γ was selected separately on each corrupted severity's labeled test set. Input sampling included appended points from the full corrupted cloud. All [30 plain values](../../results/modelnetc/summary.json) match the paper to two decimals. The source-name mapping of `add_global` is inferred from numerical agreement. Historical source is not redistributed here.
+Use the CUDA environment in [ENVIRONMENT.md](../../ENVIRONMENT.md); run commands from the release root.
+
+```bash
+export TFCW_MODELNET40_ROOT=/path/to/modelnet-parent
+export TFCW_MODELNETC_ROOT=/path/to/modelnet_c
+bash experiments/modelnetc/run.sh
+```
+
+Clean data: `$TFCW_MODELNET40_ROOT/data/modelnet40_ply_hdf5_2048/ply_data_{train,test}*.h5` with `data`/`label`. Corruptions: `$TFCW_MODELNETC_ROOT/{jitter,add_global}_{0,1,2,3,4}.h5` with the same keys. File indices 0–4 are S1–S5; clean evaluation uses ModelNet40 test data.
+Parameters: batch 32; points [1024,512,256,128]; K [110,110,110,110]; metric 2; rescale 0.8; knnxyz; Torch seed 3407.
+γ protocol: select separately on each labeled test set over 0,10,…,9990; the original runner does not print γ.
+Batch-wide standard deviation makes features depend on batch composition. Non-1024 clouds are resampled with replacement from the full cloud (including appended points); no explicit top-level NumPy seed. Exceptions print skipped severities; these are not accepted results.
+
+| Mode / corruption | Clean | S1 | S2 | S3 | S4 | S5 |
+|---|---:|---:|---:|---:|---:|---:|
+| global / jitter | 81.40 | 80.27 | 75.41 | 64.51 | 53.93 | 46.07 |
+| local / jitter | 83.39 | 82.70 | 82.05 | 78.48 | 73.14 | 66.65 |
+| united / jitter | 84.72 | 84.40 | 82.54 | 78.28 | 69.69 | 60.90 |
+| global / add_global | 81.40 | 73.50 | 66.17 | 58.51 | 51.26 | 47.16 |
+| local / add_global | 83.39 | 44.69 | 33.43 | 23.58 | 20.14 | 17.42 |
+| united / add_global | 84.72 | 58.02 | 45.18 | 36.51 | 29.70 | 24.84 |
+
+All 30 corruptions and three unique clean accuracies match to two decimals; clean checked in both commands. `add_global` corresponds numerically to paper Global.
+[Summary](../../results/modelnetc/summary.json) · [Acceptance](../../results/modelnetc/port_check.json).

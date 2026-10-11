@@ -1,0 +1,6 @@
+Origin: et-FCW reconstruction/run_cls_modelnetcv2.py (Haijian Lai, MIT authorization).
+Related evaluation routines: https://github.com/ZrrSkywalker/Point-NN
+Copyright (c) 2023 Renrui Zhang
+License for Point-NN portions: MIT; see ../../third_party/licenses/Point-NN.txt.
+Modified by the et-FCW authors in the historical implementation.
+Runner bytes are unchanged by this port, as explicitly requested by the owner.

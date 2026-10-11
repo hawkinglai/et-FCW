@@ -16,4 +16,4 @@ The actual source-level [patch](../provenance/geopcsd_neighbor_fix.patch) change
 | ScanObjectNN PB-T50-RS | 57.8071 | 58.0500 | +0.2429 pp |
 | ShapeNet-Part | 68.34 | 68.68 | +0.34 pp |
 
-The correction improved all three evaluated ScanObjectNN splits and ShapeNet-Part segmentation. The [classification](../results/geopcsd_scanobjectnn/summary.json) and [segmentation](../results/geopcsd_shapenet_part/summary.json) summaries retain the measured values. Complete paired source and logs remain in the separate forensic workspace. Corrected outcomes are labeled **CORRECTED_RECONSTRUCTION**, not faithful verification of unpublished GeoPCSD source.
+The correction improved all three evaluated ScanObjectNN splits and ShapeNet-Part segmentation. The [classification](../results/geopcsd_scanobjectnn/summary.json) and [segmentation](../results/geopcsd_shapenet_part/summary.json) summaries retain the measured values.  Corrected outcomes are labeled **CORRECTED_RECONSTRUCTION**, not faithful verification of unpublished GeoPCSD source.

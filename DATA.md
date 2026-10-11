@@ -1,15 +1,17 @@
-# Data
+# Dataset layout
 
-No raw dataset or generated point-cloud cache is included in this source-only release. The saved results were produced using local inputs whose acquisition and redistribution terms were not fully documented. Do not infer dataset permissions from the code. The external `reconstruction/` companion, if made available under a suitable license, also requires separately obtained data.
+Datasets and generated point-cloud caches are not included. Set these variables before running the experiment commands; obtain datasets under their respective terms.
 
-| Dataset | Public experiment | Expected placement or path variable | Acquisition note |
-|---|---|---|---|
-| ModelNet40 HDF5 | Plain classification and ModelNet-C memory bank | Historical `reconstruction/dataloaders/data/modelnet40_ply_hdf5_2048/` | Exact acquisition provenance unresolved. |
-| ShapeNet-Part normal benchmark | Plain/GeoPCSD part segmentation and ShapeNet-C | Historical dataset path; for corrected local source set `TFCW_SHAPENET_PART_ROOT` to the benchmark directory | Original train/val/test split files are required. Exact acquisition provenance unresolved. |
-| ModelNet40 normals/cached FPS | RISP rotation | Historical `reconstruction/dataloaders/data/modelnet40_normal_resampled/` | Preprocessing provenance incomplete. |
-| ModelNet-C | Table VII | Historical `reconstruction/dataloaders/data/modelnet_c/` | `add_global` maps functionally to paper Global; filename is not in the paper. |
-| ShapeNet-C | Table VIII | Historical `reconstruction/dataloaders/data/shapenet_c/` | Same `add_global` caveat. |
-| ScanObjectNN HDF5 | Corrected GeoPCSD classification | Set `TFCW_SCANOBJECTNN_DATALOADERS_ROOT` to the directory containing `data/h5_files/` | OBJ-BG, OBJ-ONLY and PB-T50-RS files are required. Acquisition and redistribution terms need review. |
-| S3DIS and 3D adversarial inputs | Documented partial or pilot work only | Not needed for main public result commands | Not shipped; protocol and mapping gaps remain. |
+| Environment variable | Directory contents | Experiments |
+|---|---|---|
+| `TFCW_MODELNET40_ROOT` | `data/modelnet40_ply_hdf5_2048/ply_data_{train,test}*.h5`; keys `data`, `label` | ModelNet40, ModelNet-C |
+| `TFCW_MODELNET_NORMAL_ROOT` | `modelnet40_shape_names.txt`, train/test lists, category xyz/normal files, `modelnet40_{train,test}_1024pts_fps.dat` | RISP |
+| `TFCW_SHAPENET_DATALOADERS_ROOT` | `data/shapenetcore_partanno_segmentation_benchmark_v0_normal/` | ShapeNet-Part, ShapeNet-C |
+| `TFCW_SHAPENET_PART_ROOT` | ShapeNet-Part benchmark directory directly | Corrected GeoPCSD ShapeNet-Part |
+| `TFCW_MODELNETC_ROOT` | `{jitter,add_global}_{0,1,2,3,4}.h5`; keys `data`, `label` | ModelNet-C |
+| `TFCW_SHAPENETC_ROOT` | `clean.h5`, `{jitter,add_global}_{0,1,2,3,4}.h5`; keys `data`, `label`, `pid` or `part_label` | ShapeNet-C |
+| `TFCW_SCANOBJECTNN_DATALOADERS_ROOT` | `data/h5_files/` with OBJ-BG, OBJ-ONLY, PB-T50-RS splits | Corrected GeoPCSD ScanObjectNN |
 
-The separate forensic workspace contains tens of gigabytes of dataset and episode-cache files. They were not copied into this release. See [protocol notes](docs/protocol_notes.md) for the historical source dependency.
+ShapeNet-Part directories contain `synsetoffset2category.txt`, `train_test_split/shuffled_{train,val,test}_file_list.json`, and category text files with xyz, normals and part labels. ModelNet-C uses clean ModelNet40 training/test data; ShapeNet-C uses clean text training data and its HDF5 files for evaluation.
+
+Corruption file indices 0–4 correspond to S1–S5; `add_global` corresponds numerically to paper Global. Preserve the recorded RISP FPS caches: regeneration may change results. Dataset acquisition and redistribution permissions are separate from the code license.

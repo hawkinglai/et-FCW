@@ -1,3 +1,15 @@
-# Corrected GeoPCSD: ShapeNet-Part
+# Corrected GeoPCSD — ShapeNet-Part
 
-This is the canonical **local corrected reconstruction**. Set `TFCW_SHAPENET_PART_ROOT` to the existing `shapenetcore_partanno_segmentation_benchmark_v0_normal` dataset directory, then use [run.sh](run.sh) from this directory in the recorded CUDA environment. The path-only loader substitution does not alter point sampling. The launcher preserves trainval → test, surface `geobp`, 1024 input points, encoder K `[105,105,110,120]`, decoder K3, γ230 and Torch seed 3407. The original NumPy sampling behavior remains. See the [curated result](../../results/geopcsd_shapenet_part/summary.json) and [correction record](../../docs/geopcsd_correction.md).
+Use the CUDA environment in [ENVIRONMENT.md](../../ENVIRONMENT.md); run commands from the release root.
+
+```bash
+export TFCW_SHAPENET_PART_ROOT=/path/to/shapenetcore_partanno_segmentation_benchmark_v0_normal
+bash experiments/geopcsd_shapenet_part/run.sh
+```
+
+Data: category xyz/normal/part-label text files, `synsetoffset2category.txt`, and `train_test_split/shuffled_{train,val,test}_file_list.json` directly under the root.
+Parameters: trainval → test; batch 128; points [1024,512,256,128]; encoder K [105,105,110,120]; decoder K3; metric 2; rescale 0.2; geobp; Torch seed 3407.
+γ protocol: fixed γ230.
+NumPy sampling uses replacement without an explicit top-level NumPy seed; keep eight DataLoader workers and batch 128. Batch-wide knnxyz standard deviation is not used by this surface.
+Result: **68.68% mIoU**, corrected local reconstruction; [neighbor correction](../../docs/geopcsd_correction.md).
+[Summary](../../results/geopcsd_shapenet_part/summary.json) · [Saved-result consistency check](../../results/geopcsd_shapenet_part/port_check.json).
