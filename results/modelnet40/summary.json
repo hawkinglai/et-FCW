@@ -1,9 +1,29 @@
 {
-  "status": "VERIFIED_REPRODUCTION",
+  "status": "CORRECTED_REPRODUCTION",
   "paper_accuracy_percent": 84.8,
-  "measured_accuracy_percent": 85.1297,
-  "selected_gamma": 6090,
-  "gamma_selection": "Original search over 0,2,...,9998 using labeled test data",
-  "historical_entry_point": "reconstruction/scripts/modelnet.sh",
-  "log": "stdout_stderr.log"
+  "measured_accuracy_percent": 85.0486,
+  "selected_gamma": 5790,
+  "paper_gap_pp": 0.2486,
+  "bz1_accuracy_percent": 85.0486,
+  "bz1_selected_gamma": 5792,
+  "correction": "docs/knnxyz_std_correction.md",
+  "environment": {
+    "gpu": "NVIDIA RTX A5000",
+    "torch": "2.7.1+cu118",
+    "python": "3.12.2",
+    "torch_seed": 3407,
+    "loader_seed": 3407,
+    "gamma_selection": "test labels, historical protocol"
+  },
+  "note": "per-sample std + seeded copy-shuffle loader; 84.72 (std change alone, old loader) is not what this code produces",
+  "logs": "rerun_per_sample/",
+  "legacy_batch_wide_std": {
+    "status": "VERIFIED_REPRODUCTION (batch-wide std regression: see correction note)",
+    "paper_accuracy_percent": 84.8,
+    "measured_accuracy_percent": 85.1297,
+    "selected_gamma": 6090,
+    "gamma_selection": "Original search over 0,2,...,9998 using labeled test data",
+    "historical_entry_point": "reconstruction/scripts/modelnet.sh",
+    "log": "stdout_stderr.log"
+  }
 }

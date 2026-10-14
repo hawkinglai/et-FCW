@@ -1,0 +1,11 @@
+CMD: cd experiments/shapenet_part && $PYTHON -u run_part.py --bz 1 --points [1024,512,256,128] --stages 4 --k [105,105,110,120] --de_k 3 --metric 2 --rescale 0.2 --gamma 230 --surface knnxyz
+GPU: NVIDIA RTX A5000  start: 2026-10-14T23:15:45+08:00
+==> Loading args..
+Namespace(bz=1, points=[1024, 512, 256, 128], stages=4, k=[105, 105, 110, 120], metric=2, rescale=0.2, surface='knnxyz', de_k=3, gamma=230)
+==> Preparing model..
+==> Preparing data..
+==> Constructing Point-Memory Bank..
+==> Starting Point-NN..
+Elapsed time: 196.7296121120453 seconds
+Point-NN's part segmentation mIoU: 70.26.
+wall_seconds 200.66

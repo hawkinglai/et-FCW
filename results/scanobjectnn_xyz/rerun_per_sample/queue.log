@@ -1,0 +1,55 @@
+2026-10-14T23:08:09+08:00 START mn40_xyz_bz32
+2026-10-14T23:08:25+08:00 END mn40_xyz_bz32 classification accuracy: 85.0486 with best gamma=5790.0.
+2026-10-14T23:08:25+08:00 START mn40_xyz_bz1
+2026-10-14T23:09:53+08:00 END mn40_xyz_bz1 classification accuracy: 85.0486 with best gamma=5792.0.
+2026-10-14T23:09:53+08:00 START scan_xyz_split1_bzrel
+2026-10-14T23:09:57+08:00 END scan_xyz_split1_bzrel classification accuracy: 65.9208 with best gamma=4446.0.
+2026-10-14T23:09:57+08:00 START scan_xyz_split2_bzrel
+2026-10-14T23:10:02+08:00 END scan_xyz_split2_bzrel classification accuracy: 72.2892 with best gamma=2276.0.
+2026-10-14T23:10:02+08:00 START scan_xyz_split3_bzrel
+2026-10-14T23:10:21+08:00 END scan_xyz_split3_bzrel classification accuracy: 55.1353 with best gamma=3572.0.
+2026-10-14T23:10:21+08:00 START scan_xyz_split1_bz1
+2026-10-14T23:10:41+08:00 END scan_xyz_split1_bz1 classification accuracy: 65.9208 with best gamma=4448.0.
+2026-10-14T23:10:41+08:00 START scan_xyz_split2_bz1
+2026-10-14T23:11:02+08:00 END scan_xyz_split2_bz1 classification accuracy: 72.2892 with best gamma=2276.0.
+2026-10-14T23:11:02+08:00 START scan_xyz_split3_bz1
+2026-10-14T23:12:38+08:00 END scan_xyz_split3_bz1 classification accuracy: 55.1353 with best gamma=3572.0.
+2026-10-14T23:12:38+08:00 START scan_xyz_split1_bz32
+2026-10-14T23:12:43+08:00 END scan_xyz_split1_bz32 classification accuracy: 65.9208 with best gamma=4446.0.
+2026-10-14T23:12:43+08:00 START scan_xyz_split2_bz32
+2026-10-14T23:12:48+08:00 END scan_xyz_split2_bz32 classification accuracy: 72.2892 with best gamma=2276.0.
+2026-10-14T23:12:48+08:00 START scan_xyz_split3_bz32
+2026-10-14T23:13:07+08:00 END scan_xyz_split3_bz32 classification accuracy: 55.1353 with best gamma=3572.0.
+2026-10-14T23:13:07+08:00 START scan_geobp_split1_bzrel
+2026-10-14T23:13:14+08:00 END scan_geobp_split1_bzrel classification accuracy: 69.5353 with best gamma=5618.0.
+2026-10-14T23:13:14+08:00 START scan_geobp_split2_bzrel
+2026-10-14T23:13:21+08:00 END scan_geobp_split2_bzrel classification accuracy: 72.9776 with best gamma=3974.0.
+2026-10-14T23:13:21+08:00 START scan_geobp_split3_bzrel
+2026-10-14T23:13:52+08:00 END scan_geobp_split3_bzrel classification accuracy: 57.4948 with best gamma=3530.0.
+2026-10-14T23:13:52+08:00 CLS QUEUE DONE
+2026-10-14T23:13:59+08:00 START shapenet_part_xyz_bz128
+2026-10-14T23:14:51+08:00 END shapenet_part_xyz_bz128
+2026-10-14T23:14:51+08:00 START shapenet_part_xyz_bz32
+2026-10-14T23:15:45+08:00 END shapenet_part_xyz_bz32
+2026-10-14T23:15:45+08:00 START shapenet_part_xyz_bz1
+2026-10-14T23:19:06+08:00 END shapenet_part_xyz_bz1
+2026-10-14T23:19:06+08:00 START modelnetc_xyz_jitter_bz32
+2026-10-14T23:20:08+08:00 END modelnetc_xyz_jitter_bz32
+2026-10-14T23:20:08+08:00 START modelnetc_xyz_add_global_bz32
+2026-10-14T23:21:09+08:00 END modelnetc_xyz_add_global_bz32
+2026-10-14T23:21:09+08:00 START modelnetc_xyz_jitter_bz1
+2026-10-14T23:28:29+08:00 END modelnetc_xyz_jitter_bz1
+2026-10-14T23:28:29+08:00 START modelnetc_xyz_add_global_bz1
+2026-10-14T23:35:55+08:00 END modelnetc_xyz_add_global_bz1
+2026-10-14T23:35:55+08:00 START shapenetc_xyz_jitter_bz128
+2026-10-14T23:42:00+08:00 END shapenetc_xyz_jitter_bz128
+2026-10-14T23:42:00+08:00 START shapenetc_xyz_add_global_bz128
+2026-10-14T23:48:11+08:00 END shapenetc_xyz_add_global_bz128
+2026-10-14T23:48:11+08:00 START shapenetc_xyz_jitter_bz32
+2026-10-14T23:54:22+08:00 END shapenetc_xyz_jitter_bz32
+2026-10-14T23:54:22+08:00 START shapenetc_xyz_add_global_bz32
+2026-10-15T00:00:27+08:00 END shapenetc_xyz_add_global_bz32
+2026-10-15T00:00:27+08:00 START shapenetc_xyz_jitter_bz1
+2026-10-15T00:16:04+08:00 END shapenetc_xyz_jitter_bz1
+2026-10-15T00:16:04+08:00 START shapenetc_xyz_add_global_bz1
+2026-10-15T00:19:15+08:00 STOPPED by user request: shapenetc_xyz_add_global_bz1 cancelled; no further bz=1 runs outside ModelNet40/ScanObjectNN

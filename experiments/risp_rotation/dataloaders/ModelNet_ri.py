@@ -186,7 +186,9 @@ if __name__ == '__main__':
     args = parse_args()
 
 
-    data_path = '/home/kitahara/Desktop/effectiveness_tfcw/reconstruction/dataloaders/data/modelnet40_normal_resampled/'
+    if not os.environ.get('TFCW_MODELNET_NORMAL_ROOT'):
+        raise SystemExit('Set TFCW_MODELNET_NORMAL_ROOT to the modelnet40_normal_resampled directory.')
+    data_path = os.path.join(os.environ['TFCW_MODELNET_NORMAL_ROOT'], '')
     train_dataset = ModelNetDataLoader(root=data_path, args=args, split='train', process_data=args.process_data)
     test_dataset = ModelNetDataLoader(root=data_path, args=args, split='test', process_data=args.process_data)
     trainDataLoader = torch.utils.data.DataLoader(train_dataset, batch_size=args.batch_size, shuffle=True, num_workers=10, drop_last=True)

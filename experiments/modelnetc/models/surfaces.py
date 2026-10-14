@@ -202,7 +202,7 @@ class pcs_knnxyz(nn.Module):
         grouped_xyz = index_points(xyz, knn_idx)
 
         mean_xyz = new_xyz.unsqueeze(dim=-2)
-        std_xyz = torch.std(grouped_xyz - mean_xyz, keepdim=True)
+        std_xyz = torch.std(grouped_xyz - mean_xyz, dim=[1,2,3], keepdim=True)
 
         
         knn_xyz = (grouped_xyz - mean_xyz) / (std_xyz + 1e-5)

@@ -56,8 +56,9 @@ class ShapeNetC(Dataset):
         )
 
 def main():
-    # UPDATE THIS to your actual path, e.g., '/home/kitahara/Desktop/effectiveness_tfcw/reconstruction/data/shapenet_c'
-    data_root = '/home/kitahara/Desktop/effectiveness_tfcw/reconstruction/dataloaders/data/shapenet_c' 
+    data_root = os.environ.get('TFCW_SHAPENETC_ROOT')
+    if not data_root:
+        raise SystemExit('Set TFCW_SHAPENETC_ROOT to the directory containing the ShapeNet-C h5 files.')
     
     # List of corruptions based on your previous 'ls' output
     corruptions = [
