@@ -82,6 +82,101 @@ All ScanObjectNN h5 files are sorted by class and the loaders use `shuffle=False
 
 PB-T50-RS falls to about 43%. The inverted ranking (PB-T50-RS above OBJ-BG) of the batch-wide numbers is an artifact of file order.
 
+## Is the batch-wide version order-dependent on ModelNet40 / ModelNet-C / ShapeNet-C?
+
+Diagnostic on the batch-wide code of `51686e4` (scratch copies; no code change). Raw logs: `results/order_diag/`.
+
+### (1) Are the files grouped by class?
+
+Labels are read in the loaders' own order (ModelNet40: `glob` order of `ply_data_{test,train}*.h5`, concatenated). "Runs" is the number of maximal same-label runs; "random" is its expectation for a random order. Single-class batch fraction is at the released batch size (ModelNet40 and ModelNet-C 32, ShapeNet-C 128).
+
+| file | n | classes | sorted by label | label runs | max run | bz | single-class batches | mean majority fraction |
+|---|---:|---:|---|---|---:|---:|---:|---:|
+| `modelnet40_test` | 2468 | 40 | no | 2382 (random: 2382) | 3 | 32 | 0.0000 | 0.123 |
+| `modelnet40_train` | 9840 | 40 | no | 9442 (random: 9449) | 3 | 32 | 0.0000 | 0.132 |
+| `modelnet_c/clean` | 2468 | 40 | no | 2382 (random: 2382) | 3 | 32 | 0.0000 | 0.119 |
+| `modelnet_c/jitter_0` | 2468 | 40 | no | 2382 (random: 2382) | 3 | 32 | 0.0000 | 0.119 |
+| `modelnet_c/jitter_1` | 2468 | 40 | no | 2382 (random: 2382) | 3 | 32 | 0.0000 | 0.119 |
+| `modelnet_c/jitter_2` | 2468 | 40 | no | 2382 (random: 2382) | 3 | 32 | 0.0000 | 0.119 |
+| `modelnet_c/jitter_3` | 2468 | 40 | no | 2382 (random: 2382) | 3 | 32 | 0.0000 | 0.119 |
+| `modelnet_c/jitter_4` | 2468 | 40 | no | 2382 (random: 2382) | 3 | 32 | 0.0000 | 0.119 |
+| `modelnet_c/add_global_0` | 2468 | 40 | no | 2382 (random: 2382) | 3 | 32 | 0.0000 | 0.119 |
+| `modelnet_c/add_global_1` | 2468 | 40 | no | 2382 (random: 2382) | 3 | 32 | 0.0000 | 0.119 |
+| `modelnet_c/add_global_2` | 2468 | 40 | no | 2382 (random: 2382) | 3 | 32 | 0.0000 | 0.119 |
+| `modelnet_c/add_global_3` | 2468 | 40 | no | 2382 (random: 2382) | 3 | 32 | 0.0000 | 0.119 |
+| `modelnet_c/add_global_4` | 2468 | 40 | no | 2382 (random: 2382) | 3 | 32 | 0.0000 | 0.119 |
+| `shapenet_c/clean` | 2874 | 16 | no | 2346 (random: 2358) | 6 | 128 | 0.0000 | 0.306 |
+| `shapenet_c/jitter_0` | 2874 | 16 | no | 2346 (random: 2358) | 6 | 128 | 0.0000 | 0.306 |
+| `shapenet_c/jitter_1` | 2874 | 16 | no | 2346 (random: 2358) | 6 | 128 | 0.0000 | 0.306 |
+| `shapenet_c/jitter_2` | 2874 | 16 | no | 2346 (random: 2358) | 6 | 128 | 0.0000 | 0.306 |
+| `shapenet_c/jitter_3` | 2874 | 16 | no | 2346 (random: 2358) | 6 | 128 | 0.0000 | 0.306 |
+| `shapenet_c/jitter_4` | 2874 | 16 | no | 2346 (random: 2358) | 6 | 128 | 0.0000 | 0.306 |
+| `shapenet_c/add_global_0` | 2874 | 16 | no | 2346 (random: 2358) | 6 | 128 | 0.0000 | 0.306 |
+| `shapenet_c/add_global_1` | 2874 | 16 | no | 2346 (random: 2358) | 6 | 128 | 0.0000 | 0.306 |
+| `shapenet_c/add_global_2` | 2874 | 16 | no | 2346 (random: 2358) | 6 | 128 | 0.0000 | 0.306 |
+| `shapenet_c/add_global_3` | 2874 | 16 | no | 2346 (random: 2358) | 6 | 128 | 0.0000 | 0.306 |
+| `shapenet_c/add_global_4` | 2874 | 16 | no | 2346 (random: 2358) | 6 | 128 | 0.0000 | 0.306 |
+
+None of the files is sorted or grouped by class: run counts equal the random expectation (within 12 of it), the longest run is 3 (ModelNet) or 6 (ShapeNet-C), and no batch is single-class. For comparison, the ScanObjectNN files are sorted into 15 runs (see above). ShapeNet-C label here is the shape category (`label`); `pid` was not used.
+
+### (2) Random test/train order, batch-wide version
+
+Seeds 1–3: a seeded permutation applied to the train and the test loaders through an external wrapper (`DataLoader` datasets wrapped in `Subset`; runner source unchanged). The "original" column is the file order. Because the files are not class-grouped, ShapeNet-C was **not** order-tested (condition for running it was that the files be class-grouped; they are not).
+
+**ModelNet40** (bz 32, K 66, metric 2, rescale 0.8):
+
+| order | OA | γ |
+|---|---:|---:|
+| original | 85.1297 | 6090 |
+| seed 1 | 85.7374 | 6792 |
+| seed 2 | 84.8460 | 8616 |
+| seed 3 | 85.2917 | 8140 |
+
+Seeds 1–3: min 84.8460, max 85.7374, mean 85.2917; largest |Δ| from the original 0.61 pp.
+
+**ModelNet-C** (bz 32, K 110, metric 2, rescale 0.8; selected γ per set). "orig" is the file order; min/max/mean are over seeds 1–3; last column is the largest |Δ| from orig over the three seeds. The three orig rows for jitter equal the recorded batch-wide values.
+
+| corruption | mode | set | orig | min | max | mean | max \|Δ\| |
+|---|---|---|---:|---:|---:|---:|---:|
+| jitter | global | clean | 81.40 | 81.00 | 81.40 | 81.19 | 0.40 |
+| jitter | global | S1 | 80.27 | 79.62 | 80.59 | 80.17 | 0.65 |
+| jitter | global | S2 | 75.41 | 75.12 | 76.22 | 75.51 | 0.81 |
+| jitter | global | S3 | 64.51 | 63.94 | 64.75 | 64.39 | 0.57 |
+| jitter | global | S4 | 53.93 | 53.61 | 53.77 | 53.69 | 0.32 |
+| jitter | global | S5 | 46.07 | 45.62 | 46.64 | 46.15 | 0.57 |
+| jitter | local | clean | 83.39 | 83.02 | 83.31 | 83.16 | 0.37 |
+| jitter | local | S1 | 82.70 | 82.58 | 83.10 | 82.77 | 0.40 |
+| jitter | local | S2 | 82.05 | 81.81 | 82.21 | 82.02 | 0.24 |
+| jitter | local | S3 | 78.48 | 77.88 | 79.05 | 78.51 | 0.60 |
+| jitter | local | S4 | 73.14 | 72.61 | 73.01 | 72.81 | 0.53 |
+| jitter | local | S5 | 66.65 | 66.86 | 67.26 | 67.11 | 0.61 |
+| jitter | united | clean | 84.72 | 85.05 | 85.17 | 85.12 | 0.45 |
+| jitter | united | S1 | 84.40 | 84.32 | 84.68 | 84.52 | 0.28 |
+| jitter | united | S2 | 82.54 | 82.82 | 83.10 | 82.99 | 0.56 |
+| jitter | united | S3 | 78.28 | 77.88 | 78.04 | 77.97 | 0.40 |
+| jitter | united | S4 | 69.69 | 69.57 | 69.89 | 69.78 | 0.20 |
+| jitter | united | S5 | 60.90 | 60.98 | 62.16 | 61.48 | 1.26 |
+| add_global | global | clean | 81.40 | 81.00 | 81.40 | 81.19 | 0.40 |
+| add_global | global | S1 | 73.50 | 74.11 | 74.68 | 74.41 | 1.18 |
+| add_global | global | S2 | 66.17 | 65.19 | 66.00 | 65.54 | 0.98 |
+| add_global | global | S3 | 58.51 | 57.74 | 58.27 | 58.09 | 0.77 |
+| add_global | global | S4 | 51.26 | 50.97 | 51.66 | 51.38 | 0.40 |
+| add_global | global | S5 | 47.16 | 45.87 | 46.43 | 46.11 | 1.29 |
+| add_global | local | clean | 83.39 | 83.02 | 83.31 | 83.16 | 0.37 |
+| add_global | local | S1 | 44.69 | 44.29 | 45.50 | 44.89 | 0.81 |
+| add_global | local | S2 | 33.43 | 31.12 | 33.83 | 32.58 | 2.31 |
+| add_global | local | S3 | 23.58 | 23.30 | 24.47 | 23.81 | 0.89 |
+| add_global | local | S4 | 20.14 | 19.25 | 20.30 | 19.86 | 0.89 |
+| add_global | local | S5 | 17.42 | 16.49 | 17.67 | 16.91 | 0.93 |
+| add_global | united | clean | 84.72 | 85.05 | 85.17 | 85.12 | 0.45 |
+| add_global | united | S1 | 58.02 | 57.46 | 59.24 | 58.16 | 1.22 |
+| add_global | united | S2 | 45.18 | 45.62 | 46.35 | 46.03 | 1.17 |
+| add_global | united | S3 | 36.51 | 35.78 | 37.97 | 36.86 | 1.46 |
+| add_global | united | S4 | 29.70 | 29.78 | 30.83 | 30.25 | 1.13 |
+| add_global | united | S5 | 24.84 | 25.12 | 25.28 | 25.21 | 0.44 |
+
+Largest |Δ| from the original order: 1.26 pp (jitter) and 2.31 pp (add_global). The jitter files have 1024 points. The `add_global` files have 1034–1074 points and are resampled to 1024 with an unseeded NumPy generator whose per-worker stream depends on item-to-worker assignment, so changing the order also changes the resampled points for `add_global`; the two effects are not separated here. The jitter rows are free of that confound. For comparison, PB-T50-RS fell from 63.36 to about 43 under reordering (section above).
+
 ## Batch independence (per-sample)
 
 | Run | bz 1 | bz 32 | bz 64 / released |
@@ -91,7 +186,7 @@ PB-T50-RS falls to about 43%. The inverted ranking (PB-T50-RS above OBJ-BG) of t
 | ScanObjectNN OBJ-ONLY | 72.2892 (γ 2276) | 72.2892 (γ 2276) | 72.2892 (γ 2276) |
 | ScanObjectNN PB-T50-RS | 55.1353 (γ 3572) | 55.1353 (γ 3572) | 55.1353 (γ 3572) |
 
-OA is identical in every cell. **γ is not**: ModelNet40 and OBJ-BG differ by one grid step (2) between bz 1 and bz 32. Earlier forensics showed test features at different batch sizes agree to about 1e-6; a float-level reordering of tied accuracies would explain the shift, but this was not checked (UNVERIFIED).
+OA identical; γ may differ by one grid step (float ties): ModelNet40 and OBJ-BG differ by one grid step (2) between bz 1 and bz 32. Test features at different batch sizes agree to about 1e-6 in the forensics runs. The tie explanation itself was not checked.
 
 Other bz = 1 checks were not required and were run only where listed here: ShapeNet-Part mIoU 70.35 / 70.21 / 70.26 at bz 128 / 32 / 1; ModelNet-C jitter agrees across bz 1 and 32 within 0.04 pp, and add_global differs by up to 1.33 pp; ShapeNet-C jitter and add_global agree across bz 128 / 32 within 0.14 pp. The segmentation and corruption loaders resample with an unseeded NumPy generator whose per-worker stream depends on batch layout. That is the likely cause and was not tested (UNVERIFIED); those loaders were out of scope for the seeding change.
 
