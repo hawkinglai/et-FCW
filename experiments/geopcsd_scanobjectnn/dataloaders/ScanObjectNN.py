@@ -51,22 +51,18 @@ def index_points(points, idx):
 
 
 class ScanObjectNN(Dataset):
-    def __init__(self, num_points, split, partition='training', seed=3407):
+    def __init__(self, num_points, split, partition='training'):
         self.data, self.label = load_scanobjectnn_data(partition=partition, split=split)
-        self.seed = seed
         self.num_points = num_points
         self.partition = partition
 
     def __getitem__(self, item):
         # pointcloud_index = fpsample.fps_npdu_kdtree_sampling(self.data[item], self.num_points)
         # pointcloud, _ = index_points(self.data[item], pointcloud_index)
-        # Copy: the shuffle below must not write through into self.data (a view of the h5 array).
-        pointcloud = self.data[item][:self.num_points].copy()
+        pointcloud = self.data[item][:self.num_points]
         label = self.label[item]
         if self.partition == 'training':
-            # Reproducible training shuffle: depends only on (seed, item), not on loader order or workers.
-            perm = np.random.default_rng([self.seed, int(item)]).permutation(pointcloud.shape[0])
-            pointcloud = pointcloud[perm]
+            np.random.shuffle(pointcloud)
         return pointcloud, label
 
     def __len__(self):

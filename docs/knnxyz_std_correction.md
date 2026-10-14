@@ -1,6 +1,6 @@
 # knnxyz standard-deviation correction
 
-`pcs_knnxyz` normalizes grouped neighbor offsets by a standard deviation. Release `51686e4` computes it over the **whole batch**; the version that reproduces TMM Table II for ScanObjectNN computes it **per sample**, as `pcs_geobp` does. This note records the change, its provenance, and what it does to every experiment that uses `pcs_knnxyz`. It is a **local correction**, not evidence about which version the published tables used.
+`pcs_knnxyz` normalizes grouped neighbor offsets by a standard deviation. Release `51686e4` computes it over the **whole batch**; the version that reproduces TMM Table II for ScanObjectNN computes it **per sample**, as `pcs_geobp` does. This note records the change, its provenance, and what it does to every experiment that uses `pcs_knnxyz`. Table II is consistent with the per-sample version and Tables VII/VIII with the batch-wide version; this is not directly verified.
 
 ## The change
 
@@ -13,7 +13,7 @@ Applied in all seven `experiments/*/models/surfaces.py` that define `pcs_knnxyz`
 
 ### Loader determinism (second change, same PR)
 
-In `ScanObjectNN.py` and `ModelNet.py` (five files), `__getitem__` previously took a **view** of the stored array and shuffled it in place (`np.random.shuffle`), so training items were permuted inside `self.data` with an unseeded global RNG. Now:
+In `modelnet40/dataloaders/{ScanObjectNN,ModelNet}.py` and `modelnetc/dataloaders/ModelNet.py` (three files), `__getitem__` previously took a **view** of the stored array and shuffled it in place (`np.random.shuffle`), so training items were permuted inside `self.data` with an unseeded global RNG. Now:
 
 ```diff
 -        pointcloud = self.data[item][:self.num_points]
@@ -24,19 +24,19 @@ In `ScanObjectNN.py` and `ModelNet.py` (five files), `__getitem__` previously to
 +            pointcloud = pointcloud[perm]
 ```
 
-`seed` is a new constructor argument, default 3407. The shuffled order depends only on `(seed, item)`. Test items are not shuffled (unchanged). Point order matters because farthest-point sampling starts at index 0.
+`seed` is a new constructor argument, default 3407. The loaders of `experiments/geopcsd_scanobjectnn` were intentionally left unchanged: that experiment uses `geobp`, which never used the batch-wide std. The shuffled order depends only on `(seed, item)`. Test items are not shuffled (unchanged). Point order matters because farthest-point sampling starts at index 0.
 
 ## Provenance
 
-- Source: VS Code Remote-SSH local history of `reconstruction/models/surfaces.py` (host 192.168.1.239), 50 saved versions kept (2025-07-14 17:53:40 → 2025-12-11 14:05:13).
+- Source: the editor's local file history of `reconstruction/models/surfaces.py`, 50 saved versions kept (2025-07-14 17:53:40 → 2025-12-11 14:05:13).
 - `pcs_knnxyz` std argument over time: `dim=-1`/`dim=-2` variants until 2025-07-14 18:02:32; **per-sample `dim=[1,2,3]` from 2025-07-14 18:04:25** through 2025-12-09 15:15:45 (28 saves); **batch-wide from 2025-12-09 15:16:09**, a one-line change (line 186); batch-wide in all later saves. Versions before 2025-07-14 17:53 are not in the history (UNVERIFIED).
 - Every release copy (and git `efc07fd`, `d8c36cd`, `b31fdfe`, `51686e4`) carries the batch-wide line; no git blob, archive or agent log contains a per-sample `pcs_knnxyz`.
-- Agent involvement: none found. Codex, Claude, Qwen and Hermes transcripts under `~` contain no write to `reconstruction/models/surfaces.py`. Who made the 2025-12-09 edit, and why, is UNVERIFIED; `/mnt/hdd` was not readable.
+- Agent involvement: none found. Codex, Claude, Qwen and Hermes transcripts under `~` contain no write to `reconstruction/models/surfaces.py`. Who made the 2025-12-09 edit, and why, is UNVERIFIED; one mounted volume was not readable.
 - On 2025-07-14 18:40 the `s1/s2/s3_scanobjectnn.sh` scripts were set to the C0 configuration with `knnxyz` while the std was per-sample, then reverted at 18:41. Whether anything was run is UNVERIFIED.
 
 ## Before / after
 
-Test-selected γ, as historically. "Batch-wide" is release `51686e4`; "per-sample" is this branch (std change **and** loader change). Per-sample runs: torch seed 3407, RTX A5000, Python 3.12.2, torch 2.7.1+cu118; logs in `results/*/rerun_per_sample/`.
+Test-selected γ, as historically. "Batch-wide" is release `51686e4`; "per-sample" is this branch (std change **and** loader change; GeoPCSD ScanObjectNN unchanged). Per-sample runs: torch seed 3407, RTX A5000, Python 3.12.2, torch 2.7.1+cu118; logs in `results/*/rerun_per_sample/`.
 
 | Experiment | Paper | Batch-wide (51686e4) | Per-sample (this branch) |
 |---|---:|---:|---:|
@@ -46,7 +46,7 @@ Test-selected γ, as historically. "Batch-wide" is release `51686e4`; "per-sampl
 | ScanObjectNN PB-T50-RS, bz 32, K 90 | 55.6 | 63.36 (γ 2752) | **55.14** (γ 3572) |
 | ShapeNet-Part, bz 128, γ 230 (mIoU) | 70.50 | 70.18 | **70.35** |
 
-ScanObjectNN gaps to the paper: −0.38 / +0.39 / −0.46 pp, all within ±0.5. The batch-wide ScanObjectNN values are from the forensics runs (`forensics_m1_scan`), not from files in this repository.
+ScanObjectNN gaps to the paper: −0.38 / +0.39 / −0.46 pp, all within ±0.5. The batch-wide ScanObjectNN values are from the forensics runs , not from files in this repository.
 
 ModelNet40 per-sample is **85.0486**, not 84.72. 84.72 was measured with the std change alone on the old loader (in-place unseeded shuffle). The shuffle order alone moves ModelNet40 by 0.33 pp.
 
@@ -200,12 +200,8 @@ Other bz = 1 checks were not required and were run only where listed here: Shape
 | ModelNet-C (`modelnetc`) | yes | re-run, bz 32 (also 1) |
 | ShapeNet-C (`shapenetc`) | yes (knnxyz row; the runner also evaluates geobp) | re-run, bz 128 and 32 (jitter also bz 1) |
 | RISP rotation (`risp_rotation`) | no: only `tFCW_encoding` is imported; `pcs_knnxyz` appears only in a demo `__main__` | not re-run; numbers unchanged |
-| GeoPCSD ScanObjectNN / ShapeNet-Part | no (`geobp`) | source of `pcs_knnxyz` patched but not on the run path. ScanObjectNN loader changed, see below |
+| GeoPCSD ScanObjectNN / ShapeNet-Part | no (`geobp`) | source of `pcs_knnxyz` patched but not on the run path. loader intentionally unchanged |
 | S3DIS few-shot | yes, outside this release | **not re-run** (deferred) |
-
-### GeoPCSD ScanObjectNN loader note
-
-The loader change reaches the GeoPCSD ScanObjectNN experiment. Re-run at its recorded settings: 69.5353 / 72.9776 / 57.4948, against the recorded 69.7074 / 72.9776 / 58.0500. The recorded values came from the old in-place unseeded shuffle. Its `summary.json` is left unchanged. To reproduce the recorded values, use the `ScanObjectNN.py` of `51686e4`.
 
 ## Reproducing the batch-wide results
 

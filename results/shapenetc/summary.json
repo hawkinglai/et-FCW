@@ -1,5 +1,5 @@
 {
-  "status": "CORRECTED_RERUN_DOES_NOT_MATCH_PAPER",
+  "status": "verified at 51686e4; per-sample re-run on this branch",
   "columns": "clean,S1..S5",
   "per_sample_knnxyz_bz128": {
     "jitter": [

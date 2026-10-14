@@ -17,8 +17,15 @@ The original runner also evaluates a second surface (`geobp`), whose output is n
 
 | knnxyz corruption | Clean | S1 | S2 | S3 | S4 | S5 |
 |---|---:|---:|---:|---:|---:|---:|
+| jitter | 64.00 | 63.79 | 62.90 | 61.91 | 60.26 | 58.35 |
+| add_global | 64.00 | 62.56 | 61.35 | 60.23 | 59.34 | 58.43 |
+
+The clean value is the ShapeNet-C `clean.h5` baseline (62.78% mIoU), evaluated with a different loader from ShapeNet-Part (70.35% mIoU here). `add_global` corresponds numerically to paper Global. Per-sample values are 0.23–1.30 pp above paper Table VIII (the clean value differs by 1.22).
+
+**Legacy (batch-wide std, exact paper match):** status verified at `51686e4`; to reproduce Table VIII exactly, `git checkout 51686e4`. There the ten corrupted values and both clean baselines matched to two decimals:
+
+| knnxyz corruption | Clean | S1 | S2 | S3 | S4 | S5 |
+|---|---:|---:|---:|---:|---:|---:|
 | jitter | 62.78 | 62.49 | 61.74 | 60.83 | 59.34 | 57.57 |
 | add_global | 62.78 | 61.63 | 60.67 | 59.74 | 59.02 | 58.20 |
-
-The clean value is the ShapeNet-C `clean.h5` baseline (62.78% mIoU), evaluated with a different loader from ShapeNet-Part’s 70.18% mIoU. Ten corrupted values and both clean baselines match to two decimals. `add_global` corresponds numerically to paper Global.
 [Summary](../../results/shapenetc/summary.json) · [Acceptance](../../results/shapenetc/port_check.json).

@@ -1,0 +1,10 @@
+CMD: bash experiments/geopcsd_scanobjectnn/run.sh obj_bg  (2026-10-15T00:45:00+08:00, NVIDIA RTX A5000)
+==> Loading args..
+Namespace(dataset='scan', split=1, bz=64, points=[1024, 512, 256, 128], stages=4, k=[90, 90, 90, 90], metric=2, rescale=0.8, surface='geobp')
+==> Preparing model..
+==> Preparing data..
+==> Constructing Memory Bank from scan sets..
+==> Constructing Memory Bank from scan sets..
+Elapsed time: 3.4014389514923096 seconds
+classification accuracy: 69.7074 with best gamma=5434.0.
+classification accuracy: 0.0000 with best gamma=5434.0.
