@@ -1,0 +1,2 @@
+Re-run at recorded settings after the loader change (copy + seeded shuffle): OBJ-BG 69.5353 (g5618), OBJ-ONLY 72.9776 (g3974), PB-T50-RS 57.4948 (g3530).
+Recorded summary.json values (69.7074 / 72.9776 / 58.0500) came from the previous in-place unseeded shuffle and are unchanged. See docs/knnxyz_std_correction.md.

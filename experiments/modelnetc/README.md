@@ -11,7 +11,7 @@ bash experiments/modelnetc/run.sh
 Clean data: `$TFCW_MODELNET40_ROOT/data/modelnet40_ply_hdf5_2048/ply_data_{train,test}*.h5` with `data`/`label`. Corruptions: `$TFCW_MODELNETC_ROOT/{jitter,add_global}_{0,1,2,3,4}.h5` with the same keys. File indices 0–4 are S1–S5; clean evaluation uses ModelNet40 test data.
 Parameters: batch 32; points [1024,512,256,128]; K [110,110,110,110]; metric 2; rescale 0.8; knnxyz; Torch seed 3407.
 γ protocol: select separately on each labeled test set over 0,10,…,9990; the original runner does not print γ.
-Batch-wide standard deviation makes features depend on batch composition. Non-1024 clouds are resampled with replacement from the full cloud (including appended points); no explicit top-level NumPy seed. Exceptions print skipped severities; these are not accepted results.
+Per-sample std in `pcs_knnxyz` ([knnxyz correction](../../docs/knnxyz_std_correction.md)). The table below is the **batch-wide** result that matched the paper; per-sample values are in [summary.json](../../results/modelnetc/summary.json) and do not match. Non-1024 clouds are resampled with replacement from the full cloud (including appended points); no explicit top-level NumPy seed. Exceptions print skipped severities; these are not accepted results.
 
 | Mode / corruption | Clean | S1 | S2 | S3 | S4 | S5 |
 |---|---:|---:|---:|---:|---:|---:|

@@ -1,0 +1,12 @@
+CMD: cd experiments/modelnet40 && /home/kitahara/miniconda3/envs/pytorch/bin/python -u run_cls.py --dataset scan --split 2 --bz 64 --points [1024,512,256,128] --stages 4 --metric 2 --rescale 0.8 --k [90,90,90,90] --surface knnxyz
+GPU: NVIDIA RTX A5000  start: 2026-10-14T23:09:57+08:00
+==> Loading args..
+Namespace(dataset='scan', split=2, bz=64, points=[1024, 512, 256, 128], stages=4, k=[90, 90, 90, 90], metric=2, rescale=0.8, surface='knnxyz')
+==> Preparing model..
+==> Preparing data..
+==> Constructing Memory Bank from scan sets..
+==> Constructing Memory Bank from scan sets..
+Elapsed time: 1.3317453861236572 seconds
+classification accuracy: 72.2892 with best gamma=2276.0.
+classification accuracy: 0.0000 with best gamma=2276.0.
+wall_seconds 4.75

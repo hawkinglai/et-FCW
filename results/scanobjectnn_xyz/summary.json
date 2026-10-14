@@ -1,0 +1,88 @@
+{
+  "status": "VERIFIED_REPRODUCTION",
+  "criterion": "all three splits within 0.5 pp of the paper",
+  "method": "t-FCW knnxyz, per-sample std",
+  "parameters": {
+    "points": [
+      1024,
+      512,
+      256,
+      128
+    ],
+    "k": [
+      90,
+      90,
+      90,
+      90
+    ],
+    "metric": 2,
+    "rescale": 0.8,
+    "surface": "knnxyz"
+  },
+  "results": [
+    {
+      "split": "obj_bg",
+      "paper_accuracy_percent": 66.3,
+      "measured_accuracy_percent": 65.9208,
+      "signed_gap_points": -0.3792,
+      "selected_gamma": 4446.0,
+      "batch_size": 64,
+      "bz1": {
+        "acc": 65.9208,
+        "gamma": 4448.0
+      },
+      "bz32": {
+        "acc": 65.9208,
+        "gamma": 4446.0
+      }
+    },
+    {
+      "split": "obj_only",
+      "paper_accuracy_percent": 71.9,
+      "measured_accuracy_percent": 72.2892,
+      "signed_gap_points": 0.3892,
+      "selected_gamma": 2276.0,
+      "batch_size": 64,
+      "bz1": {
+        "acc": 72.2892,
+        "gamma": 2276.0
+      },
+      "bz32": {
+        "acc": 72.2892,
+        "gamma": 2276.0
+      }
+    },
+    {
+      "split": "pb_t50_rs",
+      "paper_accuracy_percent": 55.6,
+      "measured_accuracy_percent": 55.1353,
+      "signed_gap_points": -0.4647,
+      "selected_gamma": 3572.0,
+      "batch_size": 32,
+      "bz1": {
+        "acc": 55.1353,
+        "gamma": 3572.0
+      },
+      "bz32": {
+        "acc": 55.1353,
+        "gamma": 3572.0
+      }
+    }
+  ],
+  "batch_wide_std_before": {
+    "obj_bg": 53.87,
+    "obj_only": 59.38,
+    "pb_t50_rs": 63.36
+  },
+  "correction": "docs/knnxyz_std_correction.md",
+  "environment": {
+    "gpu": "NVIDIA RTX A5000",
+    "torch": "2.7.1+cu118",
+    "python": "3.12.2",
+    "torch_seed": 3407,
+    "loader_seed": 3407,
+    "gamma_selection": "test labels, historical protocol"
+  },
+  "command": "bash experiments/modelnet40/run_scanobjectnn.sh {obj_bg|obj_only|pb_t50_rs}",
+  "logs": "rerun_per_sample/"
+}

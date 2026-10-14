@@ -12,7 +12,7 @@ bash experiments/geopcsd_scanobjectnn/run.sh pb_t50_rs
 Data: `$TFCW_SCANOBJECTNN_DATALOADERS_ROOT/data/h5_files/`, with the OBJ-BG, OBJ-ONLY and PB-T50-RS HDF5 splits; see loader filenames in `dataloaders/ScanObjectNN.py`.
 Parameters: points [1024,512,256,128]; K [90,90,90,90]; metric 2; rescale 0.8; geobp; Torch seed 3407. Batch 64 for OBJ-BG/OBJ-ONLY, 32 for PB-T50-RS.
 γ protocol: select on labeled test data over 0,2,…,9998.
-Keep the recorded batch sizes and original loader ordering/sampling. Batch-wide knnxyz standard deviation is not used by this surface.
+Keep the recorded batch sizes. The recorded numbers below came from the loader of `51686e4` (in-place unseeded training shuffle); with the seeded copy-shuffle loader now in this branch the run gives 69.5353 / 72.9776 / 57.4948 ([note](../../docs/knnxyz_std_correction.md)). Batch-wide knnxyz standard deviation is not used by this surface.
 
 | Split | Accuracy (%) | γ |
 |---|---:|---:|

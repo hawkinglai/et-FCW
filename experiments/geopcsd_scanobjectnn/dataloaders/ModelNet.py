@@ -39,17 +39,21 @@ def rotate_pointcloud(pointcloud):
 
 
 class ModelNet40(Dataset):
-    def __init__(self, num_points, partition='train', split=1):
+    def __init__(self, num_points, partition='train', split=1, seed=3407):
         self.data, self.label = load_data(partition)
+        self.seed = seed
         self.num_points = num_points
         self.partition = partition   
         
 
     def __getitem__(self, item):
-        pointcloud = self.data[item][:self.num_points]
+        # Copy: the shuffle below must not write through into self.data (a view of the h5 array).
+        pointcloud = self.data[item][:self.num_points].copy()
         label = self.label[item]
         if self.partition == 'train':
-            np.random.shuffle(pointcloud)
+            # Reproducible training shuffle: depends only on (seed, item), not on loader order or workers.
+            perm = np.random.default_rng([self.seed, int(item)]).permutation(pointcloud.shape[0])
+            pointcloud = pointcloud[perm]
         return pointcloud, label
 
     def __len__(self):
