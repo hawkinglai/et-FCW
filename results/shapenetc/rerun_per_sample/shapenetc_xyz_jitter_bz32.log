@@ -1,4 +1,4 @@
-CMD: cd experiments/shapenetc && /home/kitahara/miniconda3/envs/pytorch/bin/python -u run_part_cv2.py --bz 32 --points [1024,512,256,128] --stages 4 --k [105,105,110,120] --de_k 3 --metric 2 --rescale 0.2 --gamma 230 --data_root /home/kitahara/Desktop/effectiveness_tfcw/reconstruction/dataloaders/data/shapenet_c --corruption jitter
+CMD: cd experiments/shapenetc && $PYTHON -u run_part_cv2.py --bz 32 --points [1024,512,256,128] --stages 4 --k [105,105,110,120] --de_k 3 --metric 2 --rescale 0.2 --gamma 230 --data_root $DATA_ROOT/data/shapenet_c --corruption jitter
 GPU: NVIDIA RTX A5000  start: 2026-10-14T23:48:11+08:00
 ==> Starting Part Segmentation Stress Test on: JITTER
 

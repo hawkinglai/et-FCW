@@ -36,7 +36,7 @@ In `modelnet40/dataloaders/{ScanObjectNN,ModelNet}.py` and `modelnetc/dataloader
 
 ## Before / after
 
-Test-selected γ, as historically. "Batch-wide" is release `51686e4`; "per-sample" is this branch (std change **and** loader change; GeoPCSD ScanObjectNN unchanged). Per-sample runs: torch seed 3407, RTX A5000, Python 3.12.2, torch 2.7.1+cu118; logs in `results/*/rerun_per_sample/`.
+Test-selected γ, as historically. "Batch-wide" is release `51686e4`; "per-sample" is this branch (std change **and** loader change; GeoPCSD ScanObjectNN unchanged). Per-sample runs: torch seed 3407, RTX A5000, Python 3.12.2, torch 2.7.1+cu118; logs in `results/*/rerun_per_sample/` (local absolute paths replaced by `$REPO`, `$DATA_ROOT`, `$PYTHON`).
 
 | Experiment | Paper | Batch-wide (51686e4) | Per-sample (this branch) |
 |---|---:|---:|---:|

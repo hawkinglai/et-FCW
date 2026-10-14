@@ -1,5 +1,5 @@
 import h5py, glob, os, numpy as np, json
-D='/home/kitahara/Desktop/effectiveness_tfcw/reconstruction/dataloaders/data'
+D=os.path.join(os.environ['DATA_ROOT'],'data')  # directory holding modelnet40_ply_hdf5_2048, modelnet_c, shapenet_c
 def stats(y, bz):
     y=np.asarray(y).reshape(-1).astype(np.int64); n=len(y)
     runs=1+int((np.diff(y)!=0).sum())
@@ -27,5 +27,5 @@ for c in ('clean','jitter_0','jitter_1','jitter_2','jitter_3','jitter_4','add_gl
     fn=f'{D}/shapenet_c/{c}.h5'
     with h5py.File(fn,'r') as f: keys=list(f.keys()); shp=f['data'].shape
     out[f'shapenet_c/{c}']=stats(lab(fn),128); out[f'shapenet_c/{c}']['keys']=keys; out[f'shapenet_c/{c}']['data_shape']=list(shp)
-json.dump(out,open('/home/kitahara/Desktop/effectiveness_tfcw/forensics_m1_scan/order_diag/grouping.json','w'),indent=1)
+json.dump(out,open(os.path.join(os.environ.get('OUT_DIR','.'),'grouping.json'),'w'),indent=1)
 for k,v in out.items(): print(k,{a:b for a,b in v.items() if a not in('files',)})

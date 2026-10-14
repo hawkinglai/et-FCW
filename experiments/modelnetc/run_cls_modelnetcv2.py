@@ -76,7 +76,7 @@ def get_arguments():
     parser.add_argument('--surface', type=str, default='geobp')
     
     # Experiment Params
-    parser.add_argument('--data_root', type=str, default='/home/kitahara/Desktop/effectiveness_tfcw/reconstruction/dataloaders/data/modelnet_c')
+    parser.add_argument('--data_root', type=str, default=os.environ.get('TFCW_MODELNETC_ROOT'))
     # Use 'scale' or 'jitter' if 'background' is missing from your ls output
     parser.add_argument('--corruption', type=str, default='add_local', 
                         help='Corruption type to stress test (default: background)')
@@ -85,6 +85,8 @@ def get_arguments():
                         help='List of model modes to evaluate (must be supported by model class)')
     
     args, unknown = parser.parse_known_args()
+    if not args.data_root:
+        raise SystemExit('Set TFCW_MODELNETC_ROOT or pass --data_root (directory with {jitter,add_global}_{0..4}.h5).')
     args.points = ast.literal_eval(args.points)
     args.k = ast.literal_eval(args.k)
     return args

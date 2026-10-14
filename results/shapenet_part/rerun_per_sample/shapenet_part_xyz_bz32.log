@@ -1,4 +1,4 @@
-CMD: cd experiments/shapenet_part && /home/kitahara/miniconda3/envs/pytorch/bin/python -u run_part.py --bz 32 --points [1024,512,256,128] --stages 4 --k [105,105,110,120] --de_k 3 --metric 2 --rescale 0.2 --gamma 230 --surface knnxyz
+CMD: cd experiments/shapenet_part && $PYTHON -u run_part.py --bz 32 --points [1024,512,256,128] --stages 4 --k [105,105,110,120] --de_k 3 --metric 2 --rescale 0.2 --gamma 230 --surface knnxyz
 GPU: NVIDIA RTX A5000  start: 2026-10-14T23:14:51+08:00
 ==> Loading args..
 Namespace(bz=32, points=[1024, 512, 256, 128], stages=4, k=[105, 105, 110, 120], metric=2, rescale=0.2, surface='knnxyz', de_k=3, gamma=230)

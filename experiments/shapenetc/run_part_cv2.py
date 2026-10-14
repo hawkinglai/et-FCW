@@ -5,6 +5,7 @@ from torch.utils.data import DataLoader
 import numpy as np
 from tqdm import tqdm
 import argparse
+import os
 import pandas as pd
 
 from models.parts import PartNet
@@ -44,10 +45,12 @@ def get_arguments():
     parser.add_argument('--gamma', type=int, default=230)
     
     # New Arguments for Stress Test
-    parser.add_argument('--data_root', type=str, default='/home/kitahara/Desktop/effectiveness_tfcw/reconstruction/dataloaders/data/shapenet_c')
+    parser.add_argument('--data_root', type=str, default=os.environ.get('TFCW_SHAPENETC_ROOT'))
     parser.add_argument('--corruption', type=str, default='add_local', help='Type of corruption to evaluate') 
     
     args = parser.parse_args()
+    if not args.data_root:
+        raise SystemExit('Set TFCW_SHAPENETC_ROOT or pass --data_root (directory with clean.h5 and {jitter,add_global}_{0..4}.h5).')
     args.points = ast.literal_eval(args.points)
     args.k = ast.literal_eval(args.k)
     return args
