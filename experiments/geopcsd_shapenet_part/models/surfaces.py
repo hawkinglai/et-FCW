@@ -145,7 +145,7 @@ class pcs_geobp(nn.Module):
         # idx = farthest_point_sample(xyz, self.group_num)
         new_xyz = index_points(xyz, idx)
         xyz = geometric_backpropagation(xyz.permute(0, 2, 1)).permute(0, 2, 1)
-        temp_xyz = geometric_backpropagation(new_xyz.permute(0, 2, 1)).permute(0, 2, 1)
+        temp_xyz = xyz if self.group_num == N else geometric_backpropagation(new_xyz.permute(0, 2, 1)).permute(0, 2, 1)
 
         # Perform k-nearest neighbors search
         knn_idx = knn_point(self.kneighbors, xyz, temp_xyz)
@@ -178,11 +178,12 @@ class pcs_knnxyz(nn.Module):
         idx = pointnet2_utils.furthest_point_sample(xyz, self.group_num).long() 
         # idx = farthest_point_sample(xyz, self.group_num)
         new_xyz = index_points(xyz, idx)
+        center_xyz = xyz.contiguous() if self.group_num == N else new_xyz
 
-        knn_idx = knn_point(self.kneighbors, xyz, new_xyz)
+        knn_idx = knn_point(self.kneighbors, xyz, center_xyz)
         grouped_xyz = index_points(xyz, knn_idx)
 
-        mean_xyz = new_xyz.unsqueeze(dim=-2)
+        mean_xyz = center_xyz.unsqueeze(dim=-2)
         std_xyz = torch.std(grouped_xyz - mean_xyz, dim=[1,2,3], keepdim=True)
 
         
@@ -190,7 +191,7 @@ class pcs_knnxyz(nn.Module):
         pairwise_dists = torch.cdist(grouped_xyz, mean_xyz, p=2)  # [B, N, K, 1]
 
         knn_xyz = torch.cat([knn_xyz, 
-                             new_xyz.view(B, self.group_num, 1, -1).repeat(1, 1, self.kneighbors, 1),
+                             center_xyz.view(B, self.group_num, 1, -1).repeat(1, 1, self.kneighbors, 1),
                              pairwise_dists
                              ], dim=-1)
         
