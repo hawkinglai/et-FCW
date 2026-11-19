@@ -8,7 +8,7 @@ from torch.utils.data import DataLoader
 from torch.nn import functional as F
 
 from dataloaders.loader import MyTestDataset, batch_task_collate
-from models.sem import FewshotHandler as SemNet
+from models.sem2 import FewshotHandler as SemNet
 
 def cast_cuda(input):
     if type(input) == type([]):
