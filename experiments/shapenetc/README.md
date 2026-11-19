@@ -28,4 +28,6 @@ The clean value is the ShapeNet-C `clean.h5` baseline (62.78% mIoU), evaluated w
 |---|---:|---:|---:|---:|---:|---:|
 | jitter | 62.78 | 62.49 | 61.74 | 60.83 | 59.34 | 57.57 |
 | add_global | 62.78 | 61.63 | 60.67 | 59.74 | 59.02 | 58.20 |
+
+**Note (2026-11, stage-0 feature ordering):** The same stage-0 feature-coordinate alignment fix has been applied to `models/surfaces.py` (`pcs_knnxyz` and `pcs_geobp`); Table VIII numbers above are pre-fix records and were not re-run.
 [Summary](../../results/shapenetc/summary.json) · [Acceptance](../../results/shapenetc/port_check.json).

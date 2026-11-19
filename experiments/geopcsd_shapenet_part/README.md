@@ -11,5 +11,7 @@ Data: category xyz/normal/part-label text files, `synsetoffset2category.txt`, an
 Parameters: trainval → test; batch 128; points [1024,512,256,128]; encoder K [105,105,110,120]; decoder K3; metric 2; rescale 0.2; geobp; Torch seed 3407.
 γ protocol: fixed γ230.
 NumPy sampling uses replacement without an explicit top-level NumPy seed; keep eight DataLoader workers and batch 128. Batch-wide knnxyz standard deviation is not used by this surface.
-Result: **68.68% mIoU**, corrected local reconstruction; [neighbor correction](../../docs/geopcsd_correction.md).
+Result (pre-fix `c8dd640`): **68.68% mIoU**, corrected local reconstruction; [neighbor correction](../../docs/geopcsd_correction.md).
+
+**Note (2026-11, stage-0 feature ordering):** Fixed stage-0 feature-coordinate misalignment (`models/surfaces.py`, both `pcs_geobp` and `pcs_knnxyz`). With the fix (`bank = trainval`, batch 128, γ 230, script metric): instance mIoU **68.54%** and class mIoU **64.04%**, vs. 68.69% and 64.86% before the fix (standard metric: 60.46% / 60.81% after vs. 60.92% / 61.76% before).
 [Summary](../../results/geopcsd_shapenet_part/summary.json) · [Saved-result consistency check](../../results/geopcsd_shapenet_part/port_check.json).
