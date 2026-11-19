@@ -116,7 +116,7 @@ def geometric_backpropagation(x, k=3, idx=None):
     neighbors = neighbors.permute(0, 3, 1, 2)  # B,C,N,k
     neighbor_1st = torch.index_select(neighbors, dim=-1, index=torch.tensor(data=[1], dtype=torch.long, device='cuda')) # B,C,N,1
     neighbor_1st = torch.squeeze(neighbor_1st, -1)  # B,3,N
-    neighbor_2nd = torch.index_select(neighbors, dim=-1, index=torch.tensor(data=[1], dtype=torch.long, device='cuda')) # B,C,N,1
+    neighbor_2nd = torch.index_select(neighbors, dim=-1, index=torch.tensor(data=[2], dtype=torch.long, device='cuda')) # B,C,N,1
     neighbor_2nd = torch.squeeze(neighbor_2nd, -1)  # B,3,N
 
     edge1 = neighbor_1st-org_x
